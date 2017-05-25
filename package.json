@@ -1,6 +1,6 @@
 {
-  "name": "spells-api",
-  "version": "1.0.0",
+  "name": "dnd-5e-api",
+  "version": "0.0.1",
   "description": "An API to fetch information about DnD 5e spells.",
   "main": "server.js",
   "scripts": {
