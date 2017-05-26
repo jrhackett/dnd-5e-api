@@ -4,18 +4,20 @@ var express = require('express'),
     port = process.env.PORT || 8080,
     mongoose = require('mongoose'),
     morgan = require('morgan'),
+    promise = require('bluebird'),
     config = require('./config.js')
 
+mongoose.Promise = promise
 mongoose.connect(config.database_url)
 
 app.use(morgan('dev'))
-app.use(express.static(__dirname + '/app'))
+app.use(express.static(__dirname))
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
-require('./app/routes/index')(app)
-require('./app/routes/spells')(app)
+require('./routes/index')(app)
+require('./routes/spells')(app)
 
 app.listen(port)
 console.log('The magic happens on port ' + port)
