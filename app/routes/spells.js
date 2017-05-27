@@ -35,7 +35,7 @@ module.exports = (app) => {
 
 }
 
-const filterSpells = (filter, res) => {
+export const filterSpells = (filter, res) => {
   Spell.find(filter).exec( (err, items) => {
     if (err) {
       return console.log(err);
