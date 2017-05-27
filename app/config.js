@@ -5,7 +5,7 @@ var env = process.env.NODE_ENV || 'development'
 if(env === 'development'){
   config = require('../env/development')
 } else if (env === 'test'){
-  config = require('../env/test')
+  config = require('../env/testing')
 } else if(env === 'production'){
   config = require('../env/production')
 }

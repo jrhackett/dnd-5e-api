@@ -19,5 +19,7 @@ app.set('view engine', 'handlebars')
 require('./routes/index')(app)
 require('./routes/spells')(app)
 
-app.listen(port)
+var server = app.listen(port)
 console.log('The magic happens on port ' + port)
+
+module.exports = server
