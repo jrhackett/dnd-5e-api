@@ -36,10 +36,9 @@ module.exports = (app) => {
 }
 
 export const filterSpells = (filter, res) => {
-  Spell.find(filter).exec( (err, items) => {
-    if (err) {
+  Spell.find(filter).sort('name').exec( (err, items) => {
+    if (err) 
       return console.log(err);
-    }
     res.send(items)
   })
 }
