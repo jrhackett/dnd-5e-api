@@ -3,7 +3,12 @@ var Spell = require('../models/spell')
 module.exports = (app) => {
 
   app.get('/spells', (req, res) => {
-    filterSpells({}, res)
+    let query = Object.assign(
+      {},
+      ...Object.keys(req.query) .
+        map(key => ({[fix_key(key)]: req.query[key]}))
+    )
+    filterSpells(query, res)
   })
 
   app.get('/spells/level/:level?', (req, res) => {
@@ -45,4 +50,8 @@ export const filterSpells = (filter, res) => {
 
 const capitalize = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+}
+
+const fix_key = (key) => {
+  return key === 'class' ? 'classes' : key
 }
