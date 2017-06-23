@@ -22,4 +22,4 @@ require('./routes/spells')(app)
 var server = app.listen(port)
 console.log('The magic happens on port ' + port)
 
-module.exports = server
+module.exports = app // just for testing
