@@ -6,7 +6,7 @@ module.exports = (app) => {
     let query = Object.assign(
       {},
       ...Object.keys(req.query) .
-        map(key => ({[fix_key(key)]: req.query[key]}))
+        map(key => ({[fixKey(key)]: req.query[key]}))
     )
     filterSpells(query, res)
   })
@@ -37,6 +37,6 @@ const capitalize = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
 }
 
-const fix_key = (key) => {
+const fixKey = (key) => {
   return key === 'class' ? 'classes' : key
 }
