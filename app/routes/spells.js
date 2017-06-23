@@ -11,7 +11,7 @@ module.exports = (app) => {
     filterSpells(query, res)
   })
 
-  app.get('/spells/level/:level?', (req, res) => {
+  app.get('/spells/level/:level', (req, res) => {
     var level = req.params.level
     if (!level) {
       next()
@@ -20,7 +20,7 @@ module.exports = (app) => {
     filterSpells({level:level}, res)
   })
 
-  app.get('/spells/school/:school?', (req, res) => {
+  app.get('/spells/school/:school', (req, res) => {
     var school = req.params.school
     if (!school) {
       next()
@@ -29,7 +29,7 @@ module.exports = (app) => {
     filterSpells({school:capitalize(school)}, res)
   })
 
-  app.get('/spells/class/:className?', (req, res) => {
+  app.get('/spells/class/:className', (req, res) => {
     var className = req.params.className
     if (!className) {
       next()
