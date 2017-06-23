@@ -1,12 +1,13 @@
-var Spell = require('../models/spell')
+import Spell from '../models/spell'
 
 module.exports = (app) => {
 
   app.get('/spells', (req, res) => {
+    // construct query object from the url query parameters
     let query = Object.assign(
       {},
-      ...Object.keys(req.query) .
-        map(key => ({[fixKey(key)]: req.query[key]}))
+      ...Object.keys(req.query)
+        .map(key => ({[fixKey(key)]: req.query[key]}))
     )
     filterSpells(query, res)
   })
@@ -25,6 +26,7 @@ module.exports = (app) => {
 
 }
 
+// queries database for spells that match the filter object and sends a json response
 export const filterSpells = (filter, res) => {
   Spell.find(filter).sort('name').exec( (err, items) => {
     if (err) 
@@ -33,10 +35,12 @@ export const filterSpells = (filter, res) => {
   })
 }
 
+// helper method to capitalize the first character in a string
 const capitalize = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
 }
 
+// helper method used to convert url query parameters to keys that match the spells schema
 const fixKey = (key) => {
   return key === 'class' ? 'classes' : key
 }
