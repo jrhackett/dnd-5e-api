@@ -4,7 +4,8 @@
   "description": "An API to fetch information about DnD 5e spells.",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register ./test/*.test.js",
+    "coverage": "NODE_ENV=test nyc --reporter=html --reporter=text ./node_modules/.bin/mocha --compilers js:babel-core/register ./test/*.test.js",
+    "test": "NODE_ENV=test nyc ./node_modules/.bin/mocha --compilers js:babel-core/register ./test/*.test.js",
     "start": "nodemon app/server.js --exec babel-node",
     "build": "babel app -d build",
     "serve": "node build/server.js"
@@ -25,8 +26,10 @@
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.0.2",
     "chai-http": "^3.0.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.4.2",
     "nodemon": "^1.11.0",
+    "nyc": "^11.0.2",
     "tap": "^10.5.2"
   }
 }

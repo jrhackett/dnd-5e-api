@@ -4,6 +4,8 @@ let levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 let schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation']
 let classes = ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer', 'Warlock', 'Wizard']
 
+process.env.NODE_ENV = 'test'
+
 let chai = require('chai')
 let chaiHttp = require('chai-http')
 let server = require('../app/server')
@@ -167,13 +169,11 @@ describe('Server responds appropriately to spell requests', () => {
           chai.request(server)
             .get('/spells?level=' + level + '&school=' + school + '&class=' + className)
             .end( (err, res) => {
-              if(res) {
-                res.body.map(spell => {
-                  expect(spell.level).to.equal(level.toString())
-                  expect(spell.school).to.equal(school)
-                  expect(spell.classes).to.be.an('array').that.includes(className)
-                })
-              }
+              res.body.map(spell => {
+                expect(spell.level).to.equal(level.toString())
+                expect(spell.school).to.equal(school)
+                expect(spell.classes).to.be.an('array').that.includes(className)
+              })
               if(level + 1 === levels.length && i + 1 === schools.length && j + 1 === classes.length)
                 done()
             })
@@ -182,27 +182,27 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('GET /level should 404', (done) => {
+  it('GET /spells/level should 404', (done) => {
     chai.request(server)
-      .get('/level')
+      .get('/spells/level')
       .end( (err, res) => {
         res.should.have.status(404)
         done()
       })
   })
 
-  it('GET /school should 404', (done) => {
+  it('GET /spells/school should 404', (done) => {
     chai.request(server)
-      .get('/school')
+      .get('/spells/school')
       .end( (err, res) => {
         res.should.have.status(404)
         done()
       })
   })
 
-  it('GET /class should 404', (done) => {
+  it('GET /spells/class should 404', (done) => {
     chai.request(server)
-      .get('/class')
+      .get('/spells/class')
       .end( (err, res) => {
         res.should.have.status(404)
         done()
