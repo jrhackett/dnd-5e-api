@@ -12,30 +12,15 @@ module.exports = (app) => {
   })
 
   app.get('/spells/level/:level', (req, res) => {
-    var level = req.params.level
-    if (!level) {
-      next()
-      return
-    }
-    filterSpells({level:level}, res)
+    filterSpells({level:req.params.level}, res)
   })
 
   app.get('/spells/school/:school', (req, res) => {
-    var school = req.params.school
-    if (!school) {
-      next()
-      return
-    }
-    filterSpells({school:capitalize(school)}, res)
+    filterSpells({school:capitalize(req.params.school)}, res)
   })
 
   app.get('/spells/class/:className', (req, res) => {
-    var className = req.params.className
-    if (!className) {
-      next()
-      return
-    }
-    filterSpells({classes:capitalize(className)}, res)
+    filterSpells({classes:capitalize(req.params.className)}, res)
   })
 
 }
