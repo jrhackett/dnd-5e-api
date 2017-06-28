@@ -1,36 +1,35 @@
 import React, { Component } from 'react';
-import { spellsFetchData } from '../actions';
+import PropTypes from 'prop-types'
+import Spell from './Spell'
 
 class SpellList extends Component {
 
-    componentDidMount() {
-        this.props.fetchData('/spells');
-    }
+  componentDidMount() {
+    this.props.fetchData('/spells');
+  }
 
-    render() {
-        if (this.props.hasErrored) {
-            return <p>Sorry! There was an error loading the spells</p>
-        }
-        if (this.props.isLoading) {
-            return <p>Loading…</p>
-        }
-        return (
-            <ul>
-                {this.props.spells.map((spell) => (
-                    <li key={spell.id}>
-                        {spell.name}
-                    </li>
-                ))}
-            </ul>
-        )
-    }
+  render() {
+    if(this.props.hasErrored)
+      return <p>Sorry! There was an error loading the spells</p>
+
+    if(this.props.isLoading)
+      return <p>Loading…</p>
+
+    return (
+      <ul>
+        {this.props.spells.map((spell) => (
+          <Spell key={spell.id} name={spell.name} />
+        ))}
+      </ul>
+    )
+  }
 }
 
 SpellList.propTypes = {
-    fetchData: React.PropTypes.func.isRequired,
-    spells: React.PropTypes.array.isRequired,
-    hasErrored: React.PropTypes.bool.isRequired,
-    isLoading: React.PropTypes.bool.isRequired
+    fetchData: PropTypes.func.isRequired,
+    spells: PropTypes.array.isRequired,
+    hasErrored: PropTypes.bool.isRequired,
+    isLoading: PropTypes.bool.isRequired
 }
 
 export default SpellList
