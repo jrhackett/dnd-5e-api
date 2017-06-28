@@ -16,9 +16,9 @@ class SpellList extends Component {
       return <p>Loading…</p>
 
     return (
-      <ul>
+      <ul className="container">
         {this.props.spells.map((spell) => (
-          <Spell key={spell.id} name={spell.name} />
+          <Spell key={spell.id} {...spell} />
         ))}
       </ul>
     )

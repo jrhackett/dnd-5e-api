@@ -4,6 +4,8 @@ import { Provider } from 'react-redux'
 import configureStore from './configureStore'
 import VisibleSpellList from './containers/VisibleSpellList'
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 const store = configureStore(); // You can also pass in an initialState here
 
 render(
