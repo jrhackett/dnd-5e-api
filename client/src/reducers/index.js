@@ -1,8 +1,6 @@
-import { combineReducers } from 'redux';
-import { spells, spellsHasErrored, spellsIsLoading } from './spellsFetch';
+import { combineReducers } from 'redux'
+import spells from './spellsFetch'
 
 export default combineReducers({
-    spells,
-    spellsHasErrored,
-    spellsIsLoading
-});
+  spells
+})

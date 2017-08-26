@@ -1,11 +1,9 @@
-export const spellsHasErrored = (hasErrored) => ({
-  type: 'SPELLS_HAS_ERRORED',
-  hasErrored
+export const spellsHasErrored = () => ({
+  type: 'SPELLS_HAS_ERRORED'
 })
 
-export const spellsIsLoading = (isLoading) => ({
-  type: 'SPELLS_IS_LOADING',
-  isLoading
+export const spellsIsLoading = () => ({
+  type: 'SPELLS_IS_LOADING'
 })
 
 export const spellsFetchDataSuccess = (items) => ({
@@ -15,17 +13,17 @@ export const spellsFetchDataSuccess = (items) => ({
 
 export function spellsFetchData(url) {
   return (dispatch) => {
-    dispatch(spellsIsLoading(true));
+    dispatch(spellsIsLoading());
     fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-        dispatch(spellsIsLoading(false));
+        dispatch(spellsIsLoading())
         return response;
       })
       .then((response) => response.json())
       .then((items) => dispatch(spellsFetchDataSuccess(items)))
-      .catch(() => dispatch(spellsHasErrored(true)));
+      .catch(() => dispatch(spellsHasErrored()))
   }
 }

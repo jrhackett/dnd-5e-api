@@ -1,20 +1,14 @@
 import { connect } from 'react-redux'
-import { spellsFetchData } from '../actions';
 import SpellList from '../components/SpellList'
 
 const mapStateToProps = (state) => ({
-  spells: state.spells,
-  hasErrored: state.spellsHasErrored,
-  isLoading: state.spellsIsLoading
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  fetchData: (url) => dispatch(spellsFetchData(url))
+  spells: state.spells.spells,
+  hasErrored: state.spells.hasErrored,
+  isLoading: state.spells.isLoading
 })
 
 const VisibleSpellList = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(SpellList)
 
 export default VisibleSpellList

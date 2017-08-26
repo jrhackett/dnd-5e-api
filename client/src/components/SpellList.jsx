@@ -1,35 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
 import Spell from './Spell'
 
-class SpellList extends Component {
+const SpellList = ({ spells, hasErrored, isLoading }) => {
+    
+  if(hasErrored)
+    return <p>Sorry! There was an error loading the spells</p>
 
-  componentDidMount() {
-    this.props.fetchData('/spells');
-  }
+  if(isLoading)
+    return <p>Loading…</p>
 
-  render() {
-    if(this.props.hasErrored)
-      return <p>Sorry! There was an error loading the spells</p>
-
-    if(this.props.isLoading)
-      return <p>Loading…</p>
-
-    return (
-      <ul className="container">
-        {this.props.spells.map((spell) => (
-          <Spell key={spell.id} {...spell} />
-        ))}
-      </ul>
-    )
-  }
+  return (
+    <ul className="container">
+      {spells.map((spell) => (
+        <Spell key={spell.id} {...spell} />
+      ))}
+    </ul>
+  )
 }
 
 SpellList.propTypes = {
-    fetchData: PropTypes.func.isRequired,
-    spells: PropTypes.array.isRequired,
-    hasErrored: PropTypes.bool.isRequired,
-    isLoading: PropTypes.bool.isRequired
+  spells: PropTypes.array.isRequired,
+  hasErrored: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired
 }
 
 export default SpellList
