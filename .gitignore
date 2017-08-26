@@ -8,3 +8,5 @@ coverage/
 env.json
 
 TODO
+
+.DS_Store

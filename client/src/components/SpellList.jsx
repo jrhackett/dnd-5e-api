@@ -17,11 +17,26 @@ const SpellList = ({ spells, hasErrored, isLoading }) => {
     )
 
   return (
-    <ul className="container">
+    <div className="container">
+      <h2 className="spells-header">Spells</h2>
+      <div className="spells-list-headers flex-container">
+        <div className="flex-item name">
+          <p>Name</p>
+        </div>
+        <div className="flex-item level">
+          <p>Level</p>
+        </div>
+        <div className="flex-item school">
+          <p>School</p>
+        </div>
+        <div className="flex-item classes">
+          <p>Classes</p>
+        </div>
+      </div>
       {spells.map((spell) => (
         <Spell key={spell.id} {...spell} />
       ))}
-    </ul>
+    </div>
   )
 }
 

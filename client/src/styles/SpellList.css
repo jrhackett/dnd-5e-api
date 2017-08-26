@@ -1,27 +1,50 @@
-#loading {
+.spells-header {
+  margin-bottom: 20px;
+  color: #7E69FA;
+}
+
+.spells-list-headers {
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+
+.spells-list-headers {
+  padding: 0 3rem;
+}
+
+.spells-list-headers .flex-item.name {
+  margin-left: 5%;
+}
+
+.flex-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 40px); /* this 40px is to account for the navbar height */
 }
 
-#loading span {
-  font-size: 50px;
-  width: 50px;
-  height: 50px;
+.flex-item {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  list-style: none;
+  white-space: nowrap;
 }
 
-.glyphicon-refresh-animate {
-  -animation: spin .7s infinite linear;
-  -webkit-animation: spin2 .7s infinite linear;
+.flex-item p {
+  margin-bottom: 0;
+  width: 90%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
-@-webkit-keyframes spin2 {
-  from { -webkit-transform: rotate(0deg);}
-  to { -webkit-transform: rotate(360deg);}
+.flex-item.checkbox { 
+  width: 5%;
+  margin-top: 0;
+  margin-bottom: 0; 
 }
-
-@keyframes spin {
-  from { transform: scale(1) rotate(0deg);}
-  to { transform: scale(1) rotate(360deg);}
+.flex-item.name { width: 20%; }
+.flex-item.level { width: 10%; }
+.flex-item.school { width: 20%; }
+.flex-item.classes { width: 40%; }
+.flex-item.options { 
+  width: 5%; 
+  text-align: right;
 }

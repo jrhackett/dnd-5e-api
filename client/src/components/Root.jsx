@@ -4,12 +4,18 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import RootSpellList from './RootSpellList'
 import RootSpellbook from './RootSpellbook'
 import RootProfile from './RootProfile'
-import Header from './Header'
+
+import 'bootstrap/dist/css/bootstrap'
+import '../styles/App.css'
+
+import 'jquery'
+
+import 'bootstrap/dist/js/bootstrap'
 
 const Root = ({ store }) => (
   <Provider store={store}>
     <div>
-      <Header />
+      {/* TODO add header back here when it's fixed<Header />*/}
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={RootSpellList} />
