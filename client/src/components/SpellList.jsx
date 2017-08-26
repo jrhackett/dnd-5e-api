@@ -2,13 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import Spell from './Spell'
 
+import '../styles/SpellList.css'
+
 const SpellList = ({ spells, hasErrored, isLoading }) => {
     
   if(hasErrored)
     return <p>Sorry! There was an error loading the spells</p>
 
   if(isLoading)
-    return <p>Loading…</p>
+    return (
+      <div id="loading">
+        <span className="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+      </div>
+    )
 
   return (
     <ul className="container">
