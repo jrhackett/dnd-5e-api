@@ -5,12 +5,7 @@ import RootSpellList from './RootSpellList'
 import RootSpellbook from './RootSpellbook'
 import RootProfile from './RootProfile'
 
-import 'bootstrap/dist/css/bootstrap'
 import '../styles/App.css'
-
-import 'jquery'
-
-import 'bootstrap/dist/js/bootstrap'
 
 const Root = ({ store }) => (
   <Provider store={store}>

@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Icon} from 'react-fa'
 
 import '../styles/Spell.css'
 
 const Spell = ({ name, level, school, classes }) => (
   <div className="spell-row flex-container">
     <div className="flex-item checkbox">
-      <label className="checkbox-inline"><input type="checkbox" /></label>
+      <input type="checkbox" />
     </div>
     <div className="flex-item name">
       <p>{name}</p>
@@ -21,7 +22,7 @@ const Spell = ({ name, level, school, classes }) => (
       <p>{classes.join(", ")}</p>
     </div>
     <div className="flex-item options">
-      <span className="glyphicon glyphicon-option-horizontal"></span>
+      <Icon name="ellipsis-h"></Icon>
     </div>
   </div>
 )
