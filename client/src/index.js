@@ -1,10 +1,7 @@
 import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+import ReactDOM, { render } from 'react-dom'
 import configureStore from './configureStore'
-import RootSpellList from './components/RootSpellList.jsx'
-import Header from './components/Header.jsx'
-import registerServiceWorker from './registerServiceWorker'
+import Root from './components/Root'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/App.css'
@@ -12,12 +9,11 @@ import './styles/App.css'
 const store = configureStore(); // You can also pass in an initialState here
 
 render(
-    <Provider store={store}>
-      <div>
-        <Header />  
-        <RootSpellList />
-      </div>
-    </Provider>,
-    document.getElementById('root')
+  <Root store={store} />,
+  document.getElementById('root')
 )
-registerServiceWorker()
+
+ReactDOM.render(
+  <Root store={store} />,
+  document.getElementById('root')
+);
