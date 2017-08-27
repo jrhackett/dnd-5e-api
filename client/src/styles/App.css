@@ -1,39 +1,21 @@
 body {
-  background-color: #eee;
-  font-family: Helvetica, sans-serif;
+  background: #eee;
 }
 
 p, h1, h2, h3, h4, h5, h6, span {
   color: #787C80;
 }
 
+a {
+  color: #9C9DE3;
+}
+
+a:hover {
+  color: #7E69FA;
+}
+
 span.fa {
-  font-size: 18px;
-}
-
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
+  font-size: 14px;
 }
 
 #loading {

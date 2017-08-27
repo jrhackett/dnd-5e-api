@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Header from '../../components/shared/Header'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   title: 'Spellbook'
 })
 

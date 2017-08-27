@@ -6,7 +6,6 @@
 
 .spells-list-headers {
   text-transform: uppercase;
-  padding: 0 20px;
 }
 
 .spells-list-headers {
@@ -14,15 +13,12 @@
 }
 
 .spells-list-headers p {
-  font-size: 12px;
-}
-
-.spells-list-headers .flex-item.name {
-  margin-left: 5%;
+  font-size: 10px;
 }
 
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-item {
@@ -40,19 +36,18 @@
   text-overflow: ellipsis;
 }
 
-.flex-item.checkbox { 
-  width: 5%;
-  margin-top: 0;
-  margin-bottom: 0; 
+.flex-item.info { 
+  width: 1%;
+  min-width: 15px;
 }
 
-.flex-item.name { width: 25%; }
+.flex-item.name { width: 26%; }
 
 .flex-item.level { width: 10%; }
 
-.flex-item.school { width: 18%; }
+.flex-item.school { width: 17%; }
 
-.flex-item.classes { width: 41%; }
+.flex-item.classes { width: 44%; }
 
 .flex-item.options { 
   width: 1%;

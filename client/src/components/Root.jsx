@@ -5,6 +5,7 @@ import RootSpells from './spells/RootSpells'
 import RootSpellbook from './spellbook/RootSpellbook'
 import RootProfile from './profile/RootProfile'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/App.css'
 
 const Root = ({ store }) => (

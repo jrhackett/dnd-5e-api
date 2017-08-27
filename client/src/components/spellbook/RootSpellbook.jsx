@@ -10,7 +10,7 @@ class RootSpellbook extends Component {
           <span>Future spellbook topbar</span>
         </SpellbookHeaderContainer>
         <div className="container">
-          <p>Future site of the profile</p>
+          <p>Future site of the spellbook</p>
         </div>
       </div>
     )

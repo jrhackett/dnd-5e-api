@@ -6,12 +6,12 @@ export const spellsIsLoading = () => ({
   type: 'SPELLS_IS_LOADING'
 })
 
-export const spellsFetchDataSuccess = (items) => ({
+export const spellsFetchDataSuccess = items => ({
   type: 'SPELLS_FETCH_DATA_SUCCESS',
   items
 })
 
-export function spellsFetchData(url) {
+export const spellsFetchData = url => {
   return (dispatch) => {
     dispatch(spellsIsLoading());
     fetch(url)
@@ -27,3 +27,12 @@ export function spellsFetchData(url) {
       .catch(() => dispatch(spellsHasErrored()))
   }
 }
+
+export const filterSpellsByLevel = level => ({
+  type: 'FILTER_SPELLS_BY_LEVEL',
+  level
+})
+
+export const clearSpellsFilters = () => ({
+  type: 'CLEAR_SPELLS_FILTERS'
+})

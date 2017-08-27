@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import spells from './spellsFetch'
+import spells from './spells'
 
 export default combineReducers({
   spells
