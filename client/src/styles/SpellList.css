@@ -46,15 +46,16 @@
   margin-bottom: 0; 
 }
 
-.flex-item.name { width: 20%; }
+.flex-item.name { width: 25%; }
 
 .flex-item.level { width: 10%; }
 
-.flex-item.school { width: 20%; }
+.flex-item.school { width: 18%; }
 
-.flex-item.classes { width: 40%; }
+.flex-item.classes { width: 41%; }
 
 .flex-item.options { 
-  width: 5%; 
+  width: 1%;
+  min-width: 15px;
   text-align: right;
 }
