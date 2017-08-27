@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import SpellList from '../components/SpellList'
+import SpellsList from '../../components/spells/SpellsList'
 
 const mapStateToProps = (state) => ({
   spells: state.spells.spells,
@@ -7,8 +7,8 @@ const mapStateToProps = (state) => ({
   isLoading: state.spells.isLoading
 })
 
-const VisibleSpellList = connect(
+const SpellsListContainer = connect(
   mapStateToProps
-)(SpellList)
+)(SpellsList)
 
-export default VisibleSpellList
+export default SpellsListContainer

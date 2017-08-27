@@ -1,6 +1,7 @@
-.spells-header {
-  margin-bottom: 20px;
+.spells-header h1 {
+  margin: 2rem 2rem 3rem 0;
   color: #7E69FA;
+  display: inline-block;
 }
 
 .spells-list-headers {
@@ -10,6 +11,10 @@
 
 .spells-list-headers {
   padding: 0 3rem;
+}
+
+.spells-list-headers p {
+  font-size: 12px;
 }
 
 .spells-list-headers .flex-item.name {
@@ -40,10 +45,15 @@
   margin-top: 0;
   margin-bottom: 0; 
 }
+
 .flex-item.name { width: 20%; }
+
 .flex-item.level { width: 10%; }
+
 .flex-item.school { width: 20%; }
+
 .flex-item.classes { width: 40%; }
+
 .flex-item.options { 
   width: 5%; 
   text-align: right;

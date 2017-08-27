@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Icon} from 'react-fa'
 
-import '../styles/Spell.css'
+import '../../styles/Spell.css'
 
 const Spell = ({ name, level, school, classes }) => (
   <div className="spell-row flex-container">

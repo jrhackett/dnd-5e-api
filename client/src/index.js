@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM, { render } from 'react-dom'
-import configureStore from './configureStore'
+import configureStore from './store/configureStore'
 import Root from './components/Root'
 import registerServiceWorker from './registerServiceWorker'
 

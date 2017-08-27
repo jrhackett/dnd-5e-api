@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Spell from './Spell'
+import { Icon } from 'react-fa'
 
-import '../styles/SpellList.css'
+import '../../styles/SpellList.css'
 
-const SpellList = ({ spells, hasErrored, isLoading }) => {
+const SpellsList = ({ spells, hasErrored, isLoading }) => {
     
   if(hasErrored)
     return <p>Sorry! There was an error loading the spells</p>
@@ -12,13 +13,12 @@ const SpellList = ({ spells, hasErrored, isLoading }) => {
   if(isLoading)
     return (
       <div id="loading">
-        <span className="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+        <Icon name="spinner" spin />
       </div>
     )
 
   return (
     <div className="container">
-      <h2 className="spells-header">Spells</h2>
       <div className="spells-list-headers flex-container">
         <div className="flex-item name">
           <p>Name</p>
@@ -40,10 +40,10 @@ const SpellList = ({ spells, hasErrored, isLoading }) => {
   )
 }
 
-SpellList.propTypes = {
+SpellsList.propTypes = {
   spells: PropTypes.array.isRequired,
   hasErrored: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired
 }
 
-export default SpellList
+export default SpellsList

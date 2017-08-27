@@ -1,5 +1,6 @@
 body {
   background-color: #eee;
+  font-family: Helvetica, sans-serif;
 }
 
 p, h1, h2, h3, h4, h5, h6, span {
@@ -12,16 +13,19 @@ p, h1, h2, h3, h4, h5, h6, span {
   margin-right: auto;
   margin-left: auto;
 }
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     width: 970px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
@@ -32,26 +36,11 @@ p, h1, h2, h3, h4, h5, h6, span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 #loading span {
   font-size: 50px;
   width: 50px;
   height: 50px;
-}
-
-.glyphicon-refresh-animate {
-  -animation: spin .7s infinite linear;
-  -webkit-animation: spin2 .7s infinite linear;
-}
-
-@-webkit-keyframes spin2 {
-  from { -webkit-transform: rotate(0deg);}
-  to { -webkit-transform: rotate(360deg);}
-}
-
-@keyframes spin {
-  from { transform: scale(1) rotate(0deg);}
-  to { transform: scale(1) rotate(360deg);}
 }
