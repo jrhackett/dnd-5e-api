@@ -7,6 +7,10 @@ p, h1, h2, h3, h4, h5, h6, span {
   color: #787C80;
 }
 
+span.fa {
+  font-size: 18px;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
