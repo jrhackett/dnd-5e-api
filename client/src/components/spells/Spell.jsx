@@ -1,37 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Icon } from 'react-fa'
+import SpellDetails from './SpellDetails'
 
 import '../../styles/Spell.css'
 
-const Spell = ({ name, level, school, classes }) => (
+const Spell = ({ spell, shouldShowDetails, onInfoClick }) => (
   <div className="spell-row flex-container">
     <div className="flex-item name">
-      <p>{name}</p>
+      <p>{spell.name}</p>
     </div>
     <div className="flex-item level">
-      <p>{level}</p>
+      <p>{spell.level}</p>
     </div>
     <div className="flex-item school">
-      <p>{school}</p>
+      <p>{spell.school}</p>
     </div>
     <div className="flex-item classes">
-      <p>{classes.join(", ")}</p>
+      <p>{spell.classes.join(", ")}</p>
     </div>
-    <div className="flex-item info">
+    <div className="flex-item info" onClick={() => {onInfoClick(spell.id)}}>
       <Icon name="info"></Icon>
     </div>
     <div className="flex-item options">
       <Icon name="ellipsis-h"></Icon>
     </div>
+    <SpellDetails {...spell} shouldShow={shouldShowDetails} />
   </div>
 )
 
 Spell.propTypes = {
-  name: PropTypes.string.isRequired,
-  level: PropTypes.string.isRequired,
-  school: PropTypes.string.isRequired,
-  classes: PropTypes.array.isRequired
+  spell: PropTypes.object.isRequired,
+  shouldShowDetails: PropTypes.bool.isRequired,
+  onInfoClick: PropTypes.func.isRequired
 }
 
 export default Spell

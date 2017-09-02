@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Spell from './Spell'
+import SpellContainer from '../../containers/spells/SpellContainer'
 import { Icon } from 'react-fa'
 
 import '../../styles/SpellList.css'
@@ -34,7 +34,7 @@ const SpellsList = ({ spells, hasErrored, isLoading }) => {
         </div>
       </div>
       {spells.map((spell) => (
-        <Spell key={spell.id} {...spell} />
+        <SpellContainer key={spell.id} id={spell.id} />
       ))}
     </div>
   )

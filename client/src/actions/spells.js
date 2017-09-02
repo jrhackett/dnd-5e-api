@@ -1,13 +1,15 @@
+import * as types from '../actionTypes'
+
 export const spellsHasErrored = () => ({
-  type: 'SPELLS_HAS_ERRORED'
+  type: types.SPELLS_HAS_ERRORED
 })
 
 export const spellsIsLoading = () => ({
-  type: 'SPELLS_IS_LOADING'
+  type: types.SPELLS_IS_LOADING
 })
 
 export const spellsFetchDataSuccess = items => ({
-  type: 'SPELLS_FETCH_DATA_SUCCESS',
+  type: types.SPELLS_FETCH_DATA_SUCCESS,
   items
 })
 
@@ -29,10 +31,15 @@ export const spellsFetchData = url => {
 }
 
 export const filterSpellsByLevel = level => ({
-  type: 'FILTER_SPELLS_BY_LEVEL',
+  type: types.FILTER_SPELLS_BY_LEVEL,
   level
 })
 
 export const clearSpellsFilters = () => ({
-  type: 'CLEAR_SPELLS_FILTERS'
+  type: types.CLEAR_SPELLS_FILTERS
+})
+
+export const showSpellDetails = id => ({
+  type: types.SHOW_SPELL_DETAILS,
+  id
 })
