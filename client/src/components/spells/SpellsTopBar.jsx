@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Icon } from 'react-fa'
+import SpellFiltersContainer from '../../containers/spells/SpellFiltersContainer'
 
-const SpellsTopBar = ({ numberOfSpells, isLoading, onFilterLevelClick, onFilterClear }) => {
+const SpellsTopBar = ({ numberOfSpells, isLoading, onShowFilters }) => {
   if(isLoading)
     return null
   return (
@@ -9,19 +11,12 @@ const SpellsTopBar = ({ numberOfSpells, isLoading, onFilterLevelClick, onFilterC
       <span>{ numberOfSpells } total</span>
       <a onClick={e => {
           e.preventDefault()
-          onFilterLevelClick('0')
+          onShowFilters()
         }}
       >
-        See all cantrips
+        <Icon name="filter"></Icon>
       </a>
-
-      <a onClick={e => {
-          e.preventDefault()
-          onFilterClear()
-        }}
-      >
-        Clear Filters
-      </a>
+      <SpellFiltersContainer />
     </span>
   )
 }
@@ -29,8 +24,7 @@ const SpellsTopBar = ({ numberOfSpells, isLoading, onFilterLevelClick, onFilterC
 SpellsTopBar.propTypes = {
   numberOfSpells: PropTypes.number.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  onFilterLevelClick: PropTypes.func.isRequired,
-  onFilterClear: PropTypes.func.isRequired
+  onShowFilters: PropTypes.func.isRequired
 }
 
 export default SpellsTopBar

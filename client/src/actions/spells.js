@@ -43,3 +43,7 @@ export const showSpellDetails = id => ({
   type: types.SHOW_SPELL_DETAILS,
   id
 })
+
+export const showFilters = () => ({
+  type: types.SHOW_SPELL_FILTERS,
+})

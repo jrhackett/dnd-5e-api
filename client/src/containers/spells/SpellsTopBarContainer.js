@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import SpellsTopBar from '../../components/spells/SpellsTopBar'
-import { filterSpellsByLevel, clearSpellsFilters } from '../../actions/spells'
+import { showFilters } from '../../actions/spells'
 
 const mapStateToProps = state => ({
   numberOfSpells: state.spells.spells.length,
@@ -8,11 +8,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onFilterLevelClick: level => {
-    dispatch(filterSpellsByLevel(level))
-  },
-  onFilterClear: () => {
-    dispatch(clearSpellsFilters())
+  onShowFilters: () => {
+    dispatch(showFilters())
   }
 })
 

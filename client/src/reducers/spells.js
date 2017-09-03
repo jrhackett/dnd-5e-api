@@ -5,7 +5,8 @@ const initialState = {
   hasErrored: false,
   isLoading: false,
   filterLevel: "-1", // TODO might want to add a bool instead of defaulting to -1
-  showDetails: []
+  showDetails: [],
+  showSpellFilters: false
 }
 
 const spells = (state = initialState, action) => {
@@ -48,6 +49,11 @@ const spells = (state = initialState, action) => {
       return {
         ...state,
         showDetails: [...state.showDetails, action.id]
+      }
+    case types.SHOW_SPELL_FILTERS:
+      return {
+        ...state,
+        showSpellFilters: !state.showSpellFilters
       }
     default:
       return state
