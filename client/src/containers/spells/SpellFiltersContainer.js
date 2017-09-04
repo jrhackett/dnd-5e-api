@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import SpellFilters from '../../components/spells/SpellFilters'
-import { filterSpellsByLevel, clearSpellsFilters } from '../../actions/spells'
+import { filterSpellsByLevel, filterSpellsBySchool, clearSpellsFilters } from '../../actions/spells'
 
 const mapStateToProps = state => ({
   shouldShow: state.spells.showSpellFilters
@@ -9,6 +9,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onFilterLevelClick: level => {
     dispatch(filterSpellsByLevel(level))
+  },
+  onFilterSchoolClick: school => {
+    dispatch(filterSpellsBySchool(school))
   },
   onFilterClear: () => {
     dispatch(clearSpellsFilters())

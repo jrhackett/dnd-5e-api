@@ -9,12 +9,12 @@ const SpellsTopBar = ({ numberOfSpells, isLoading, onShowFilters }) => {
   return (
     <span>
       <span>{ numberOfSpells } total</span>
-      <a onClick={e => {
+      <a className="btn btn-default btn-filter" onClick={e => {
           e.preventDefault()
           onShowFilters()
         }}
       >
-        <Icon name="filter"></Icon>
+        <span>Filter</span> <Icon name="filter"></Icon>
       </a>
       <SpellFiltersContainer />
     </span>

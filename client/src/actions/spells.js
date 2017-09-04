@@ -35,6 +35,11 @@ export const filterSpellsByLevel = level => ({
   level
 })
 
+export const filterSpellsBySchool = school => ({
+  type: types.FILTER_SPELLS_BY_SCHOOL,
+  school
+})
+
 export const clearSpellsFilters = () => ({
   type: types.CLEAR_SPELLS_FILTERS
 })
