@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SpellFilterLink from './SpellFilterLink'
 
-const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onFilterClear }) => {
+const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onFilterClassClick, onFilterClear }) => {
   if(shouldShow) {
     return (
       <div>
@@ -30,6 +30,10 @@ const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onF
           <SpellFilterLink text={'Transmutation'} onClick={onFilterSchoolClick} />
         </div>
         <div>
+          <span>Filter Class: </span>
+          <SpellFilterLink text={'Bard'} onClick={onFilterClassClick} />
+        </div>
+        <div>
           <a onClick={e => {
               e.preventDefault()
               onFilterClear()
@@ -49,6 +53,7 @@ SpellFilters.propTypes = {
   shouldShow: PropTypes.bool.isRequired,
   onFilterLevelClick: PropTypes.func.isRequired,
   onFilterSchoolClick: PropTypes.func.isRequired,
+  onFilterClassClick: PropTypes.func.isRequired,
   onFilterClear: PropTypes.func.isRequired
 }
 

@@ -4,8 +4,9 @@ const initialState = {
   spells: [],
   hasErrored: false,
   isLoading: false,
-  filterLevel: '-1', // TODO might want to add a bool instead of defaulting to -1
+  filterLevel: '',
   filterSchool: '',
+  filterClass: '',
   showDetails: [],
   showSpellFilters: false
 }
@@ -39,11 +40,17 @@ const spells = (state = initialState, action) => {
         ...state,
         filterSchool: action.school
       }
+    case types.FILTER_SPELLS_BY_CLASS:
+      return {
+        ...state,
+        filterClass: action.className
+      }
     case types.CLEAR_SPELLS_FILTERS:
       return {
         ...state,
-        filterLevel: '-1',
-        filterSchool: ''
+        filterLevel: '',
+        filterSchool: '',
+        filterClass: ''
       }
     case types.SHOW_SPELL_DETAILS:
       if(state.showDetails.includes(action.id)) {

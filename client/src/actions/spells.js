@@ -40,6 +40,11 @@ export const filterSpellsBySchool = school => ({
   school
 })
 
+export const filterSpellsByClass = className => ({
+  type: types.FILTER_SPELLS_BY_CLASS,
+  className
+})
+
 export const clearSpellsFilters = () => ({
   type: types.CLEAR_SPELLS_FILTERS
 })

@@ -2,17 +2,26 @@ import { createSelector } from 'reselect'
 
 const getFilterLevel = state => state.spells.filterLevel
 const getFilterSchool = state => state.spells.filterSchool
+const getFilterClass = state => state.spells.filterClass
 const getSpells = state => state.spells.spells
 
 export const getVisibleSpells = createSelector(
-  [getFilterLevel, getFilterSchool, getSpells],
-  (filterLevel, filterSchool, spells) => {
-    if(filterLevel === '-1' && filterSchool === '')
+  [getFilterLevel, getFilterSchool, getFilterClass, getSpells],
+  (filterLevel, filterSchool, filterClass, spells) => {
+    if(filterLevel === '' && filterSchool === '' && filterClass === '')
       return spells
-    if(filterLevel === '-1')
+    if(filterLevel === '' &&  filterClass === '')
       return spells.filter(s => s.school === filterSchool)
-    if(filterSchool === '')
+    if(filterSchool === '' && filterClass === '')
       return spells.filter(s => s.level === filterLevel)
-    return spells.filter(s => s.level === filterLevel && s.school === filterSchool)
+    if(filterLevel === '' && filterSchool === '')
+      return spells.filter(s => s.classes.includes(filterClass))
+    if(filterLevel === '')
+      return spells.filter(s => s.school === filterSchool && s.classes.includes(filterClass))
+    if(filterSchool === '')
+      return spells.filter(s => s.level === filterLevel && s.classes.includes(filterClass))
+    if(filterClass === '')
+      return spells.filters(s => s.level === filterLevel && s.school === filterSchool)
+    return spells.filter(s => s.level === filterLevel && s.school === filterSchool && s.classes.includes(filterClass))
   }
 )
