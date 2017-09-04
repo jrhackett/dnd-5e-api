@@ -39,3 +39,12 @@ span.fa {
   float: right;
   margin: 3rem 0;
 }
+
+.filter-links {
+  margin-bottom: 1rem;
+}
+
+.filter-links .btn {
+  margin-right: 0.5rem;
+  border-radius: 2px;
+}

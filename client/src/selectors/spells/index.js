@@ -21,7 +21,7 @@ export const getVisibleSpells = createSelector(
     if(filterSchool === '')
       return spells.filter(s => s.level === filterLevel && s.classes.includes(filterClass))
     if(filterClass === '')
-      return spells.filters(s => s.level === filterLevel && s.school === filterSchool)
+      return spells.filter(s => s.level === filterLevel && s.school === filterSchool)
     return spells.filter(s => s.level === filterLevel && s.school === filterSchool && s.classes.includes(filterClass))
   }
 )

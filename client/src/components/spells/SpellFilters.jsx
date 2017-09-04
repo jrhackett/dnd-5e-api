@@ -6,7 +6,7 @@ const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onF
   if(shouldShow) {
     return (
       <div>
-        <div>
+        <div className="filter-links">
           <span>Filter Level: </span>
           <SpellFilterLink text={'0'} onClick={onFilterLevelClick} />
           <SpellFilterLink text={'1'} onClick={onFilterLevelClick} />
@@ -18,7 +18,7 @@ const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onF
           <SpellFilterLink text={'7'} onClick={onFilterLevelClick} />
           <SpellFilterLink text={'8'} onClick={onFilterLevelClick} />
         </div>
-        <div>
+        <div className="filter-links">
           <span>Filter School: </span>
           <SpellFilterLink text={'Abjuration'} onClick={onFilterSchoolClick} />
           <SpellFilterLink text={'Conjuration'} onClick={onFilterSchoolClick} />
@@ -29,7 +29,7 @@ const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onF
           <SpellFilterLink text={'Necromancy'} onClick={onFilterSchoolClick} />
           <SpellFilterLink text={'Transmutation'} onClick={onFilterSchoolClick} />
         </div>
-        <div>
+        <div className="filter-links">
           <span>Filter Class: </span>
           <SpellFilterLink text={'Bard'} onClick={onFilterClassClick} />
           <SpellFilterLink text={'Cleric'} onClick={onFilterClassClick} />
