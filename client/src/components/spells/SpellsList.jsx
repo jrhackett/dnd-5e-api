@@ -17,6 +17,13 @@ const SpellsList = ({ spells, hasErrored, isLoading }) => {
       </div>
     )
 
+  if(spells.length === 0)
+    return (
+      <div className="container">
+        <span>There are no spells that match these filters</span>
+      </div>
+    )
+
   return (
     <div className="container">
       <div className="spells-list-headers flex-container">
