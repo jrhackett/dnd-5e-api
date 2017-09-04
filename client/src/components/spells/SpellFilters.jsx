@@ -32,6 +32,13 @@ const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onF
         <div>
           <span>Filter Class: </span>
           <SpellFilterLink text={'Bard'} onClick={onFilterClassClick} />
+          <SpellFilterLink text={'Cleric'} onClick={onFilterClassClick} />
+          <SpellFilterLink text={'Druid'} onClick={onFilterClassClick} />
+          <SpellFilterLink text={'Paladin'} onClick={onFilterClassClick} />
+          <SpellFilterLink text={'Ranger'} onClick={onFilterClassClick} />
+          <SpellFilterLink text={'Sorcerer'} onClick={onFilterClassClick} />
+          <SpellFilterLink text={'Warlock'} onClick={onFilterClassClick} />
+          <SpellFilterLink text={'Wizard'} onClick={onFilterClassClick} />
         </div>
         <div>
           <a onClick={e => {
