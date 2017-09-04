@@ -31,16 +31,34 @@ const spells = (state = initialState, action) => {
         hasErrored: false
       }
     case types.FILTER_SPELLS_BY_LEVEL:
+      if(state.filterLevel === action.level) {
+        return {
+          ...state,
+          filterLevel: ''
+        }
+      }
       return {
         ...state,
         filterLevel: action.level
       }
     case types.FILTER_SPELLS_BY_SCHOOL:
+      if(state.filterSchool === action.school) {
+        return {
+          ...state,
+          filterSchool: ''
+        }
+      }
       return {
         ...state,
         filterSchool: action.school
       }
     case types.FILTER_SPELLS_BY_CLASS:
+      if(state.filterClass === action.className) {
+        return {
+          ...state,
+          filterClass: ''
+        }
+      }
       return {
         ...state,
         filterClass: action.className

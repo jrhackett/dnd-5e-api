@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SpellFilterLink from './SpellFilterLink'
+import SpellFilterLevelContainer from '../../containers/spells/SpellFilterLevelContainer'
+import SpellFilterSchoolContainer from '../../containers/spells/SpellFilterSchoolContainer'
+import SpellFilterClassContainer from '../../containers/spells/SpellFilterClassContainer'
 
 const levels = ['0', '1', '2', '3', '4', '5', '6', '7', '8']
 const schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment',
@@ -8,27 +10,26 @@ const schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment',
 const classes = ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger',
   'Sorcerer', 'Warlock', 'Wizard']            
 
-const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onFilterClassClick, 
-  onFilterClear }) => {
+const SpellFilters = ({ shouldShow, onFilterClear }) => {
   if(shouldShow) {
     return (
       <div>
         <div className="filter-links">
           <span className="filter-label">Level: </span>
           {levels.map(level => {
-            return <SpellFilterLink key={level} text={level} onClick={onFilterLevelClick} />
+            return <SpellFilterLevelContainer key={level} level={level} text={level} />
           })}
         </div>
         <div className="filter-links">
           <span className="filter-label">School: </span>
           {schools.map(school => {
-            return <SpellFilterLink key={school} text={school} onClick={onFilterSchoolClick} />
+            return <SpellFilterSchoolContainer key={school} school={school} text={school} />
           })}
         </div>
         <div className="filter-links">
           <span className="filter-label">Class: </span>
           {classes.map(className => {
-            return <SpellFilterLink key={className} text={className} onClick={onFilterClassClick} />
+            return <SpellFilterClassContainer key={className} className={className} text={className} />
           })}
         </div>
         <div>
@@ -49,9 +50,6 @@ const SpellFilters = ({ shouldShow, onFilterLevelClick, onFilterSchoolClick, onF
 
 SpellFilters.propTypes = {
   shouldShow: PropTypes.bool.isRequired,
-  onFilterLevelClick: PropTypes.func.isRequired,
-  onFilterSchoolClick: PropTypes.func.isRequired,
-  onFilterClassClick: PropTypes.func.isRequired,
   onFilterClear: PropTypes.func.isRequired
 }
 

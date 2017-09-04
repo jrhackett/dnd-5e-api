@@ -53,3 +53,7 @@ span.fa {
   display: inline-block;
   width: 7rem;
 }
+
+span.active a.btn {
+  border-color: #7E69FA;
+}

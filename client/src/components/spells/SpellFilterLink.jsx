@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SpellFilterLink = ({ text, onClick }) => {
+const SpellFilterLink = ({ text, active, onClick }) => {
   return (
-    <span>
+    <span className={active ? 'active' : ''}>
       <a className="btn btn-default" onClick={e => {
           e.preventDefault()
           onClick(text)
@@ -17,6 +17,7 @@ const SpellFilterLink = ({ text, onClick }) => {
 
 SpellFilterLink.propTypes = {
   text: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired
 }
 
