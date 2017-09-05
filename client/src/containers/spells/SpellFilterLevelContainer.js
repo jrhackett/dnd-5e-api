@@ -4,7 +4,7 @@ import { filterSpellsByLevel } from '../../actions/spells'
 
 const mapStateToProps = (state, ownProps) => ({
   text: ownProps.text,
-  active: state.spells.filterLevel === ownProps.level
+  active: state.spells.filterLevel.includes(ownProps.level)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
