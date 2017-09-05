@@ -4,7 +4,7 @@ import { filterSpellsBySchool } from '../../actions/spells'
 
 const mapStateToProps = (state, ownProps) => ({
   text: ownProps.text,
-  active: state.spells.filterSchool === ownProps.school
+  active: state.spells.filterSchool.includes(ownProps.school)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

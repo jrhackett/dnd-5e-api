@@ -5,7 +5,7 @@ const initialState = {
   hasErrored: false,
   isLoading: false,
   filterLevel: [],
-  filterSchool: '',
+  filterSchool: [],
   filterClass: '',
   showDetails: [],
   showSpellFilters: false
@@ -45,12 +45,12 @@ const spells = (state = initialState, action) => {
       if(state.filterSchool === action.school) {
         return {
           ...state,
-          filterSchool: ''
+          filterSchool: state.filterSchool.filter(s => s !== action.school)
         }
       }
       return {
         ...state,
-        filterSchool: action.school
+        filterSchool: [...state.filterSchool, action.school]
       }
     case types.FILTER_SPELLS_BY_CLASS:
       if(state.filterClass === action.className) {
@@ -67,7 +67,7 @@ const spells = (state = initialState, action) => {
       return {
         ...state,
         filterLevel: [],
-        filterSchool: '',
+        filterSchool: [],
         filterClass: ''
       }
     case types.SHOW_SPELL_DETAILS:
