@@ -13,7 +13,7 @@ export const getVisibleSpells = createSelector(
         return false
       if(filterSchool.length > 0 && !filterSchool.includes(s.school))
         return false
-      if(filterClass !== '' && !s.classes.includes(filterClass))
+      if(filterClass.length > 0 && !filterClass.some(f => s.classes.indexOf(f) >= 0))
         return false
       return true
     })

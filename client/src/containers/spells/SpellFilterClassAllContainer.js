@@ -4,7 +4,7 @@ import { clearSpellsClassFilter } from '../../actions/spells'
 
 const mapStateToProps = state => ({
   text: 'All',
-  active: state.spells.filterClass === ''
+  active: state.spells.filterClass.length === 0
 })
 
 const mapDispatchToProps = dispatch => ({
