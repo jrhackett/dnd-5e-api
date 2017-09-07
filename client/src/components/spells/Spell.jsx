@@ -6,7 +6,7 @@ import SpellDetails from './SpellDetails'
 import '../../styles/Spell.css'
 
 const Spell = ({ spell, shouldShowDetails, onInfoClick }) => (
-  <div className="spell-row flex-container">
+  <div className="spell-row flex-container" onClick={() => {onInfoClick(spell.id)}}>
     <div className="flex-item name">
       <p>{spell.name}</p>
     </div>
@@ -18,9 +18,6 @@ const Spell = ({ spell, shouldShowDetails, onInfoClick }) => (
     </div>
     <div className="flex-item classes">
       <p>{spell.classes.join(", ")}</p>
-    </div>
-    <div className="flex-item info" onClick={() => {onInfoClick(spell.id)}}>
-      <Icon name="info"></Icon>
     </div>
     <div className="flex-item options">
       <Icon name="ellipsis-h"></Icon>

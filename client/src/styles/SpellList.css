@@ -36,18 +36,13 @@
   text-overflow: ellipsis;
 }
 
-.flex-item.info { 
-  width: 1%;
-  min-width: 15px;
-}
-
 .flex-item.name { width: 26%; }
 
 .flex-item.level { width: 10%; }
 
 .flex-item.school { width: 17%; }
 
-.flex-item.classes { width: 44%; }
+.flex-item.classes { width: 45%; }
 
 .flex-item.options { 
   width: 1%;
