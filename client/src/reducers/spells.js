@@ -63,6 +63,21 @@ const spells = (state = initialState, action) => {
         ...state,
         filterClass: action.className
       }
+    case types.CLEAR_SPELLS_LEVEL_FILTER:
+      return {
+        ...state,
+        filterLevel: []
+      }
+    case types.CLEAR_SPELLS_SCHOOL_FILTER:
+      return {
+        ...state,
+        filterSchool: []
+      }
+    case types.CLEAR_SPELLS_CLASS_FILTER:
+      return {
+        ...state,
+        filterClass: ''
+      }
     case types.CLEAR_SPELLS_FILTERS:
       return {
         ...state,

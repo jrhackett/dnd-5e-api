@@ -45,6 +45,18 @@ export const filterSpellsByClass = className => ({
   className
 })
 
+export const clearSpellsLevelFilter = () => ({
+  type: types.CLEAR_SPELLS_LEVEL_FILTER
+})
+
+export const clearSpellsSchoolFilter = () => ({
+  type: types.CLEAR_SPELLS_SCHOOL_FILTER
+})
+
+export const clearSpellsClassFilter = () => ({
+  type: types.CLEAR_SPELLS_CLASS_FILTER
+})
+
 export const clearSpellsFilters = () => ({
   type: types.CLEAR_SPELLS_FILTERS
 })

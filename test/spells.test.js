@@ -182,6 +182,15 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
+  it('GET /spells/level/bogus should 404', (done) => {
+    chai.request(server)
+      .get('/spells/level/bogus')
+      .end( (err, res) => {
+        res.should.have.status(404)
+        done()
+      })
+  })
+
   it('GET /spells/level should 404', (done) => {
     chai.request(server)
       .get('/spells/level')

@@ -13,14 +13,17 @@ module.exports = (app) => {
   })
 
   app.get('/spells/level/:level', (req, res) => {
+    // TODO check level
     filterSpells({level:req.params.level}, res)
   })
 
   app.get('/spells/school/:school', (req, res) => {
+    // TODO check school
     filterSpells({school:capitalize(req.params.school)}, res)
   })
 
   app.get('/spells/class/:className', (req, res) => {
+    // TODO check className
     filterSpells({classes:capitalize(req.params.className)}, res)
   })
 
@@ -30,7 +33,7 @@ module.exports = (app) => {
 export const filterSpells = (filter, res) => {
   Spell.find(filter).sort('name').exec( (err, items) => {
     if (err) 
-      return console.log(err);
+      console.log(err)
     res.json(items)
   })
 }
