@@ -53,7 +53,7 @@ const spells = (state = initialState, action) => {
         filterSchool: [...state.filterSchool, action.school]
       }
     case types.FILTER_SPELLS_BY_CLASS:
-      if(state.filterClass === action.className) {
+      if(state.filterClass.includes(action.className)) {
         return {
           ...state,
           filterClass: state.filterClass.filter(s => s !== action.className)
