@@ -8,7 +8,7 @@ import SpellsListContainer from '../../containers/spells/SpellsListContainer'
 class RootSpells extends Component {
   componentDidMount() {
     const { dispatch } = this.props
-    dispatch(spellsFetchData('/spells'))
+    dispatch(spellsFetchData('/api/v1/spells'))
   }
 
   render() {

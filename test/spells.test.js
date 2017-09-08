@@ -16,9 +16,9 @@ chai.use(chaiHttp);
 
 describe('Server responds appropriately to spell requests', () => {
   
-  it('GET /spells', (done) => {
+  it('GET /api/v1/spells', (done) => {
     chai.request(server)
-      .get('/spells')
+      .get('/api/v1/spells')
       .end( (err, res) => {
         res.should.have.status(200)
         res.body.should.be.a('array')
@@ -27,10 +27,10 @@ describe('Server responds appropriately to spell requests', () => {
       })
   })
 
-  it('GET /spells/level/:level', (done) => {
+  it('GET /api/v1/spells/level/:level', (done) => {
     levels.map( (level) => {
       chai.request(server)
-        .get('/spells/level/' + level)
+        .get('/api/v1/spells/level/' + level)
         .end( (err, res) => {
           res.body.map(spell => {
             expect(spell.level).to.equal(level.toString())
@@ -41,10 +41,10 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('GET /spells/school/:school', (done) => {
+  it('GET /api/v1/spells/school/:school', (done) => {
     schools.map( (school, i) => {
       chai.request(server)
-        .get('/spells/school/' + school)
+        .get('/api/v1/spells/school/' + school)
         .end( (err, res) => {
           res.body.map(spell => {
             expect(spell.school).to.equal(school)
@@ -55,10 +55,10 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('GET /spells/class/:class', (done) => {
+  it('GET /api/v1/spells/class/:class', (done) => {
     classes.map( (className, i) => {
       chai.request(server)
-        .get('/spells/class/' + className)
+        .get('/api/v1/spells/class/' + className)
         .end( (err, res) => {
           res.body.map(spell => {
             expect(spell.classes).to.be.an('array').that.includes(className)
@@ -69,10 +69,10 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('GET /spells?level=:level', (done) => {
+  it('GET /api/v1/spells?level=:level', (done) => {
     levels.map( (level) => {
       chai.request(server)
-        .get('/spells?level=' + level)
+        .get('/api/v1/spells?level=' + level)
         .end( (err, res) => {
           res.body.map(spell => {
             expect(spell.level).to.equal(level.toString())
@@ -83,10 +83,10 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('responds to /spells?school=:school', (done) => {
+  it('responds to /api/v1/spells?school=:school', (done) => {
     schools.map( (school, i) => {
       chai.request(server)
-        .get('/spells?school=' + school)
+        .get('/api/v1/spells?school=' + school)
         .end( (err, res) => {
           res.body.map(spell => {
             expect(spell.school).to.equal(school)
@@ -97,10 +97,10 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('responds to /spells?class=:class', (done) => {
+  it('responds to /api/v1/spells?class=:class', (done) => {
     classes.map( (className, i) => {
       chai.request(server)
-        .get('/spells?class=' + className)
+        .get('/api/v1/spells?class=' + className)
         .end( (err, res) => {
           res.body.map(spell => {
             expect(spell.classes).to.be.an('array').that.includes(className)
@@ -111,11 +111,11 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('responds to /spells?level=:level&school=:school', (done) => {
+  it('responds to /api/v1/spells?level=:level&school=:school', (done) => {
     levels.map( (level) => {
       schools.map( (school, i) => {
         chai.request(server)
-          .get('/spells?level=' + level + '&school=' + school)
+          .get('/api/v1/spells?level=' + level + '&school=' + school)
           .end( (err, res) => {
             res.body.map(spell => {
               expect(spell.level).to.equal(level.toString())
@@ -128,11 +128,11 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('responds to /spells?level=:level&class=:class', (done) => {
+  it('responds to /api/v1/spells?level=:level&class=:class', (done) => {
     levels.map( (level) => {
       classes.map( (className, i) => {
         chai.request(server)
-          .get('/spells?level=' + level + '&class=' + className)
+          .get('/api/v1/spells?level=' + level + '&class=' + className)
           .end( (err, res) => {
             res.body.map(spell => {
               expect(spell.level).to.equal(level.toString())
@@ -145,11 +145,11 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('responds to /spells?school=:school&class=:class', (done) => {
+  it('responds to /api/v1/spells?school=:school&class=:class', (done) => {
     schools.map( (school, i) => {
       classes.map( (className, j) => {
         chai.request(server)
-          .get('/spells?school=' + school + '&class=' + className)
+          .get('/api/v1/spells?school=' + school + '&class=' + className)
           .end( (err, res) => {
             res.body.map(spell => {
               expect(spell.school).to.equal(school)
@@ -162,12 +162,12 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('responds to /spells?level=:level&school=:school&class=:class', (done) => {
+  it('responds to /api/v1/spells?level=:level&school=:school&class=:class', (done) => {
     levels.map( (level) => {
       schools.map( (school, i) => {
       classes.map( (className, j) => {
           chai.request(server)
-            .get('/spells?level=' + level + '&school=' + school + '&class=' + className)
+            .get('/api/v1/spells?level=' + level + '&school=' + school + '&class=' + className)
             .end( (err, res) => {
               res.body.map(spell => {
                 expect(spell.level).to.equal(level.toString())
@@ -182,36 +182,36 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('GET /spells/level/bogus should 404', (done) => {
+  it('GET /api/v1/spells/level/bogus should 404', (done) => {
     chai.request(server)
-      .get('/spells/level/bogus')
+      .get('/api/v1/spells/level/bogus')
       .end( (err, res) => {
         res.should.have.status(404)
         done()
       })
   })
 
-  it('GET /spells/level should 404', (done) => {
+  it('GET /api/v1/spells/level should 404', (done) => {
     chai.request(server)
-      .get('/spells/level')
+      .get('/api/v1/spells/level')
       .end( (err, res) => {
         res.should.have.status(404)
         done()
       })
   })
 
-  it('GET /spells/school should 404', (done) => {
+  it('GET /api/v1/spells/school should 404', (done) => {
     chai.request(server)
-      .get('/spells/school')
+      .get('/api/v1/spells/school')
       .end( (err, res) => {
         res.should.have.status(404)
         done()
       })
   })
 
-  it('GET /spells/class should 404', (done) => {
+  it('GET /api/v1/spells/class should 404', (done) => {
     chai.request(server)
-      .get('/spells/class')
+      .get('/api/v1/spells/class')
       .end( (err, res) => {
         res.should.have.status(404)
         done()

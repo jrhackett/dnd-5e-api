@@ -2,7 +2,7 @@ import Spell from '../models/spell'
 
 module.exports = (app) => {
 
-  app.get('/spells', (req, res) => {
+  app.get('/api/v1/spells', (req, res) => {
     // construct query object from the url query parameters
     let query = Object.assign(
       {},
@@ -12,17 +12,17 @@ module.exports = (app) => {
     filterSpells(query, res)
   })
 
-  app.get('/spells/level/:level', (req, res) => {
+  app.get('/api/v1/spells/level/:level', (req, res) => {
     // TODO check level
     filterSpells({level:req.params.level}, res)
   })
 
-  app.get('/spells/school/:school', (req, res) => {
+  app.get('/api/v1/spells/school/:school', (req, res) => {
     // TODO check school
     filterSpells({school:capitalize(req.params.school)}, res)
   })
 
-  app.get('/spells/class/:className', (req, res) => {
+  app.get('/api/v1/spells/class/:className', (req, res) => {
     // TODO check className
     filterSpells({classes:capitalize(req.params.className)}, res)
   })
