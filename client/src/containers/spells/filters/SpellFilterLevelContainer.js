@@ -1,16 +1,27 @@
 import { connect } from 'react-redux'
 import SpellFilterLink from '../../../components/spells/SpellFilterLink'
-import { filterSpellsByLevel } from '../../../actions/spells'
+import { filterSpellsByLevel, clearSpellsLevelFilter } from '../../../actions/spells'
 
-const mapStateToProps = (state, ownProps) => ({
-  text: ownProps.text,
-  active: state.spells.filterLevel.includes(ownProps.level)
-})
+const getActiveState = (state, text) => {
+  return text === 'All' ? state.spells.filterLevel.length === 0 :
+    state.spells.filterLevel.includes(text)
+}
+
+const getOnClickFunction = (dispatch, text) => {
+  return text === 'All' ? () => dispatch(clearSpellsLevelFilter()) :
+    () => dispatch(filterSpellsByLevel(text))
+}
+
+const mapStateToProps = (state, ownProps) => {
+  const text = ownProps.text
+  return {
+    text: text,
+    active: getActiveState(state, text)
+  }
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: () => {
-    dispatch(filterSpellsByLevel(ownProps.level))
-  }
+  onClick: getOnClickFunction(dispatch, ownProps.text)
 })
 
 const SpellFilterLevelContainer = connect(

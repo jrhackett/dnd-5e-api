@@ -3,9 +3,6 @@ import PropTypes from 'prop-types'
 import SpellFilterLevelContainer from '../../containers/spells/filters/SpellFilterLevelContainer'
 import SpellFilterSchoolContainer from '../../containers/spells/filters/SpellFilterSchoolContainer'
 import SpellFilterClassContainer from '../../containers/spells/filters/SpellFilterClassContainer'
-import SpellFilterLevelAllContainer from '../../containers/spells/filters/SpellFilterLevelAllContainer'
-import SpellFilterSchoolAllContainer from '../../containers/spells/filters/SpellFilterSchoolAllContainer'
-import SpellFilterClassAllContainer from '../../containers/spells/filters/SpellFilterClassAllContainer'        
 
 const SpellFilters = ({ shouldShow, levels, schools, classes, onFilterClear }) => {
   if(shouldShow) {
@@ -13,21 +10,21 @@ const SpellFilters = ({ shouldShow, levels, schools, classes, onFilterClear }) =
       <div className="filters">
         <div className="filter-links">
           <span className="filter-label">Level: </span>
-          <SpellFilterLevelAllContainer />
+          <SpellFilterLevelContainer text='All' />
           {levels.map(level => {
-            return <SpellFilterLevelContainer key={level} level={level} text={level} />
+            return <SpellFilterLevelContainer key={level} text={level} />
           })}
         </div>
         <div className="filter-links">
           <span className="filter-label">School: </span>
-          <SpellFilterSchoolAllContainer />
+          <SpellFilterSchoolContainer text='All' />
           {schools.map(school => {
-            return <SpellFilterSchoolContainer key={school} school={school} text={school} />
+            return <SpellFilterSchoolContainer key={school} text={school} />
           })}
         </div>
         <div className="filter-links">
           <span className="filter-label">Class: </span>
-          <SpellFilterClassAllContainer />
+          <SpellFilterClassContainer text='All' />
           {classes.map(className => {
             return <SpellFilterClassContainer key={className} className={className} text={className} />
           })}
