@@ -4,7 +4,7 @@ import { clearSpellsFilters } from '../../../actions/spells'
 
 const mapStateToProps = state => ({
   shouldShow: state.spells.showSpellFilters,
-  levels: ['0', '1', '2', '3', '4', '5', '6', '7', '8'],
+  levels: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
   schools: ['Abjuration', 'Conjuration', 'Divination', 'Enchantment',
     'Evocation', 'Illusion', 'Necromancy', 'Transmutation'],
   classes: ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger',

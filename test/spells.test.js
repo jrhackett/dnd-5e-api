@@ -32,6 +32,7 @@ describe('Server responds appropriately to spell requests', () => {
       chai.request(server)
         .get('/api/v1/spells/level/' + level)
         .end( (err, res) => {
+          res.should.have.status(200)
           res.body.map(spell => {
             expect(spell.level).to.equal(level.toString())
           })
@@ -200,9 +201,27 @@ describe('Server responds appropriately to spell requests', () => {
       })
   })
 
+  it('GET /api/v1/spells/school/bogus should 404', (done) => {
+    chai.request(server)
+      .get('/api/v1/spells/school/bogus')
+      .end( (err, res) => {
+        res.should.have.status(404)
+        done()
+      })
+  })
+
   it('GET /api/v1/spells/school should 404', (done) => {
     chai.request(server)
       .get('/api/v1/spells/school')
+      .end( (err, res) => {
+        res.should.have.status(404)
+        done()
+      })
+  })
+
+  it('GET /api/v1/spells/class/bogus should 404', (done) => {
+    chai.request(server)
+      .get('/api/v1/spells/class/bogus')
       .end( (err, res) => {
         res.should.have.status(404)
         done()
