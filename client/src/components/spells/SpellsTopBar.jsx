@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Icon } from 'react-fa'
-import SpellFiltersContainer from '../../containers/spells/SpellFiltersContainer'
+import SpellFiltersContainer from '../../containers/spells/filters/SpellFiltersContainer'
 
 const SpellsTopBar = ({ numberOfSpells, isLoading, onShowFilters }) => {
   if(isLoading)

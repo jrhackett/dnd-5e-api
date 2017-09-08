@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import SpellFilters from '../../components/spells/SpellFilters'
-import { clearSpellsFilters } from '../../actions/spells'
+import SpellFilters from '../../../components/spells/SpellFilters'
+import { clearSpellsFilters } from '../../../actions/spells'
 
 const mapStateToProps = state => ({
   shouldShow: state.spells.showSpellFilters,

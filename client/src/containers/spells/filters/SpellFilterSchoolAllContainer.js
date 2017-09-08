@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import SpellFilterLink from '../../components/spells/SpellFilterLink'
-import { clearSpellsSchoolFilter } from '../../actions/spells'
+import SpellFilterLink from '../../../components/spells/SpellFilterLink'
+import { clearSpellsSchoolFilter } from '../../../actions/spells'
 
 const mapStateToProps = (state, ownProps) => ({
   text: 'All',

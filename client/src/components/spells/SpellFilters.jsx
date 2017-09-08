@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SpellFilterLevelContainer from '../../containers/spells/SpellFilterLevelContainer'
-import SpellFilterSchoolContainer from '../../containers/spells/SpellFilterSchoolContainer'
-import SpellFilterClassContainer from '../../containers/spells/SpellFilterClassContainer'
-import SpellFilterLevelAllContainer from '../../containers/spells/SpellFilterLevelAllContainer'
-import SpellFilterSchoolAllContainer from '../../containers/spells/SpellFilterSchoolAllContainer'
-import SpellFilterClassAllContainer from '../../containers/spells/SpellFilterClassAllContainer'        
+import SpellFilterLevelContainer from '../../containers/spells/filters/SpellFilterLevelContainer'
+import SpellFilterSchoolContainer from '../../containers/spells/filters/SpellFilterSchoolContainer'
+import SpellFilterClassContainer from '../../containers/spells/filters/SpellFilterClassContainer'
+import SpellFilterLevelAllContainer from '../../containers/spells/filters/SpellFilterLevelAllContainer'
+import SpellFilterSchoolAllContainer from '../../containers/spells/filters/SpellFilterSchoolAllContainer'
+import SpellFilterClassAllContainer from '../../containers/spells/filters/SpellFilterClassAllContainer'        
 
 const SpellFilters = ({ shouldShow, levels, schools, classes, onFilterClear }) => {
   if(shouldShow) {
