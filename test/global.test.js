@@ -8,13 +8,11 @@ chai.use(chaiHttp);
 
 describe('Server responds appropriately general requests', () => {
 
-  it('GET / responds with {}', (done) => {
+  it('GET / responds with 404', (done) => {
     chai.request(server)
       .get('/')
       .end( (err, res) => {
-        res.should.have.status(200)
-        res.body.should.be.a('object')
-        expect(res.body).to.deep.equal({})
+        res.should.have.status(404)
         done()
       })
   })
