@@ -1,6 +1,6 @@
 let chai = require('chai')
 let chaiHttp = require('chai-http')
-let server = require('../api/server')
+let server = require('../server/server')
 let should = chai.should()
 let expect = chai.expect
 

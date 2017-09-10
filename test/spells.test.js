@@ -1,4 +1,4 @@
-import { filterSpells } from '../api/routes/spells'
+import { filterSpells } from '../server/routes/spells'
 
 let levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 let schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation']
@@ -8,7 +8,7 @@ process.env.NODE_ENV = 'test'
 
 let chai = require('chai')
 let chaiHttp = require('chai-http')
-let server = require('../api/server')
+let server = require('../server/server')
 let should = chai.should()
 let expect = chai.expect
 
