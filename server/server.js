@@ -5,7 +5,7 @@ var express = require('express'),
     morgan = require('morgan'),
     promise = require('bluebird'),
     config = require('./config.js'),
-    port = process.env.PORT || config.port
+    port = config.port
 
 mongoose.Promise = promise
 mongoose.connect(config.database_url, { useMongoClient: true })
