@@ -1,7 +1,7 @@
 var express = require('express'),
     exphbs = require('express-handlebars'),
     app = express(),
-    port = process.env.PORT || 8080,
+    port = process.env.PORT || 443,
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     promise = require('bluebird'),
