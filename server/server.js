@@ -11,10 +11,6 @@ mongoose.Promise = promise
 mongoose.connect(config.database_url, { useMongoClient: true })
 
 app.use(morgan('dev'))
-app.use(express.static(__dirname))
-
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
-app.set('view engine', 'handlebars')
 
 require('./routes/index')(app)
 require('./routes/spells')(app)
