@@ -4,5 +4,6 @@ var jsonfile = require('jsonfile')
 var envVars = jsonfile.readFileSync(envFile)
 
 module.exports = {
-  database_url: envVars["database_url"]  
+  database_url: envVars["database_url"],
+  port: envVars["port"]
 }
