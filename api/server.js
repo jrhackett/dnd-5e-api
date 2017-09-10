@@ -8,7 +8,7 @@ var express = require('express'),
     config = require('./config.js')
 
 mongoose.Promise = promise
-mongoose.connect(config.database_url)
+mongoose.connect(config.database_url, { useMongoClient: true })
 
 app.use(morgan('dev'))
 app.use(express.static(__dirname))
