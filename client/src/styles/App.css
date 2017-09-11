@@ -3,7 +3,7 @@ body {
 }
 
 p, h1, h2, h3, h4, h5, h6, span {
-  color: #787C80;
+  color: #616366;
 }
 
 a {
@@ -69,4 +69,8 @@ span.active a.btn {
 
 .search input {
   width: 100%;
+}
+
+.search input:focus {
+  outline: none;
 }

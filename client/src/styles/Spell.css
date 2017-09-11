@@ -9,6 +9,7 @@
 .flex-item.details p {
   overflow-x: initial;
   white-space: initial;
+  margin-bottom: 0.25rem;
 }
 
 .flex-item.details {
