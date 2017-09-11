@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import SpellsTopBar from '../../components/spells/SpellsTopBar'
-import { showFilters } from '../../actions/spells'
+import { showFilters, updateSearchTerm } from '../../actions/spells'
 
 const mapStateToProps = state => ({
   numberOfSpells: state.spells.spells.length,
@@ -8,6 +8,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+  onSearchChange: (term) => {
+    dispatch(updateSearchTerm(term))
+  },
   onShowFilters: () => {
     dispatch(showFilters())
   }

@@ -69,3 +69,8 @@ export const showSpellDetails = id => ({
 export const showFilters = () => ({
   type: types.SHOW_SPELL_FILTERS,
 })
+
+export const updateSearchTerm = (searchTerm) => ({
+  type: types.UPDATE_SPELL_SEARCH_TERM,
+  searchTerm
+})

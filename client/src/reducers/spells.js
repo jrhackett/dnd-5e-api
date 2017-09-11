@@ -8,7 +8,8 @@ const initialState = {
   filterSchool: [],
   filterClass: [],
   showDetails: [],
-  showSpellFilters: false
+  showSpellFilters: false,
+  searchTerm: ''
 }
 
 const spells = (state = initialState, action) => {
@@ -101,6 +102,11 @@ const spells = (state = initialState, action) => {
       return {
         ...state,
         showSpellFilters: !state.showSpellFilters
+      }
+    case types.UPDATE_SPELL_SEARCH_TERM:
+      return {
+        ...state,
+        searchTerm: action.searchTerm
       }
     default:
       return state

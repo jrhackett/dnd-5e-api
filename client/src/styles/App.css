@@ -57,3 +57,16 @@ span.fa {
 span.active a.btn {
   border-color: #7E69FA;
 }
+
+.search {
+  display: inline-block;
+  width: 40%;
+  position: absolute;
+  top: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search input {
+  width: 100%;
+}
