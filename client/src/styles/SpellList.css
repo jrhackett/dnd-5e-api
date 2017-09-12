@@ -56,5 +56,14 @@
   }
 
   .flex-item.name { width: 88%; }
+
   .flex-item.level { width: 12%; }
+
+  .filter-links .filter-label {
+    display: block;
+  }
+
+  .filter-links .btn {
+    margin-bottom: 0.5rem;
+  }
 }
