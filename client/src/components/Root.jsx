@@ -6,7 +6,7 @@ import RootSpellbook from './spellbook/RootSpellbook'
 import RootProfile from './profile/RootProfile'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../styles/App.css'
+import '../styles/app.css'
 
 const Root = ({ store }) => (
   <Provider store={store}>

@@ -4,6 +4,7 @@ import { spellsFetchData } from '../../actions/spells'
 import SpellsHeaderContainer from '../../containers/spells/SpellsHeaderContainer'
 import SpellsTopBarContainer from '../../containers/spells/SpellsTopBarContainer'
 import SpellsListContainer from '../../containers/spells/SpellsListContainer'
+import '../../styles/spells.css'
 
 class RootSpells extends Component {
   componentDidMount() {

@@ -50,6 +50,32 @@
   text-align: right;
 }
 
+.spell-row {
+  padding: 1.0rem 3rem;
+  border-radius: 2px;
+  background-color: #fefefe;
+  margin: 0.8rem 0;
+  box-shadow: 0px 1px 4px 0px #bcbcbc;
+}
+
+.flex-item.details p {
+  overflow-x: initial;
+  white-space: initial;
+  margin-bottom: 0.25rem;
+}
+
+.flex-item.details {
+  margin-top: 1rem;
+}
+
+.detail-label {
+  font-weight: 700;
+}
+
+.extra {
+  display: none;    
+}
+
 @media screen and (max-width: 960px) {
   .flex-item.school, .flex-item.classes, .flex-item.options {
     display: none;
@@ -65,5 +91,9 @@
 
   .filter-links .btn {
     margin-bottom: 0.5rem;
+  }
+
+  .extra {
+    display: block;
   }
 }

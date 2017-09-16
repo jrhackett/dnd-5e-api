@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { Icon } from 'react-fa'
 import SpellDetails from './SpellDetails'
 
-import '../../styles/Spell.css'
-
 const Spell = ({ spell, shouldShowDetails, onInfoClick }) => (
   <div className="spell-row flex-container" onClick={() => {onInfoClick(spell.id)}}>
     <div className="flex-item name">

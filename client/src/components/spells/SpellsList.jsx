@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import SpellContainer from '../../containers/spells/SpellContainer'
 import { Icon } from 'react-fa'
 
-import '../../styles/SpellList.css'
-
 const SpellsList = ({ spells, hasErrored, isLoading }) => {
     
   if(hasErrored)
