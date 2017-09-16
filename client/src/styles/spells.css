@@ -96,4 +96,13 @@
   .extra {
     display: block;
   }
+
+  .spells-header {
+    margin-bottom: 5rem;
+  }
+
+  .spells-header .search {
+    top: 8.5rem;
+    width: 60%;
+  }
 }
