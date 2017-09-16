@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Spell = ({ shouldShow, components, duration, casting_time, range, description, athigherlevel }) => {
+const Spell = ({ shouldShow, school, classes, components, duration, casting_time, range, description, athigherlevel }) => {
   if(shouldShow) {
     return (
       <div className="flex-item details">
+        <p className="extra"><span className="detail-label">School:</span> {school}</p>
+        <p className="extra"><span className="detail-label">Classes:</span> {classes.join(", ")}</p>
         <p><span className="detail-label">Components:</span> {components}</p>
         <p><span className="detail-label">Duration:</span> {duration}</p>
         <p><span className="detail-label">Casting Time:</span> {casting_time}</p>
@@ -20,6 +22,8 @@ const Spell = ({ shouldShow, components, duration, casting_time, range, descript
 
 Spell.propTypes = {
   shouldShow: PropTypes.bool.isRequired,
+  school: PropTypes.string.isRequired,
+  classes: PropTypes.array.isRequired,
   components: PropTypes.string.isRequired,
   duration: PropTypes.string.isRequired,
   casting_time: PropTypes.string.isRequired,
