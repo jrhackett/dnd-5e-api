@@ -1,5 +1,7 @@
-# DnD 5e API
+# DnD 5e Spells
 
-This is an API I'm working on to provide developers with information about the 5th edition of Dungeons and Dragons. It is built using NodeJS and hopefully will grow to include all information about the game. Right now, I am just working with the spells.
+This application helps display and organize spells for Dungeons and Dragons 5e. It includes an API to query spells as well as a frontend that has a number of features. This project is a work in progress to provide for features in both the server and client architectures. The goal is to create a tool that makes it easier to organize resources for players and game masters. I hope to also develop the API further to help other developers make cool things.
 
-I hope to build this to a point that it becomes easier for other developers to build tools for players and game masters.
+## Credits
+
+Jake Hackett 
