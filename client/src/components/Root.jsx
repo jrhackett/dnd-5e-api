@@ -13,11 +13,11 @@ const Root = ({ store }) => (
     <div>
       <BrowserRouter>
         <div>
-          <nav id="nav-main">
-            <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/'>Spells</Link></li>
-              <li><Link to='/'>Spellbook</Link></li>
+          <nav className="navbar">
+            <ul className="nav">
+              <li className="item"><Link to='/'>Home</Link></li>
+              <li className="item"><Link to='/'>Spells</Link></li>
+              <li className="item"><Link to='/'>Spellbook</Link></li>
             </ul>
           </nav>
           <Switch>
