@@ -16,9 +16,9 @@ const Root = ({ store }) => (
         <div>
           <Navigation />
           <Switch>
-            <Route exact path="/" component={RootSpells} />
-            <Route exact path="/spellbook" component={RootSpellbook} />
-            <Route exact path="/profile" component={RootProfile} />
+            <Route path="/spellbook" component={RootSpellbook} />
+            <Route path="/profile" component={RootProfile} />
+            <Route path="/" component={RootSpells} />
           </Switch>
         </div>
       </BrowserRouter>
