@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onInfoClick: (id) => {
-    dispatch(showSpellDetails(id))
+    if(!getSelection().toString())
+      dispatch(showSpellDetails(id))
   }
 })
 
