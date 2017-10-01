@@ -1,3 +1,17 @@
+.spells-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spells-header-left, .spells-header-right {
+  width: 50%;
+}
+
+.spells-header-right {
+  text-align: right;
+  margin: 3rem 0;
+}
+
 .spells-header h1 {
   margin: 2rem 2rem 3rem 0;
   color: #7E69FA;

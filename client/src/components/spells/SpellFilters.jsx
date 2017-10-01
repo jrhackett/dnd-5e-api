@@ -7,7 +7,7 @@ import SpellFilterClassContainer from '../../containers/spells/filters/SpellFilt
 const SpellFilters = ({ shouldShow, levels, schools, classes, onFilterClear }) => {
   if(shouldShow) {
     return (
-      <div className="filters">
+      <div className="container filters">
         <div className="filter-links">
           <span className="filter-label">Level: </span>
           <SpellFilterLevelContainer text='All' />

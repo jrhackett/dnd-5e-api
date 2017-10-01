@@ -3,6 +3,7 @@ import SpellsTopBar from '../../components/spells/SpellsTopBar'
 import { showFilters, updateSearchTerm } from '../../actions/spells'
 
 const mapStateToProps = state => ({
+  title: 'Spells',
   numberOfSpells: state.spells.spells.length,
   isLoading: state.spells.isLoading
 })

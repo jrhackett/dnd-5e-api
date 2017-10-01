@@ -9,6 +9,7 @@ const SpellsList = ({ spells, hasErrored, isLoading }) => {
     return <p>Sorry! There was an error loading the spells</p>
 
   if(isLoading)
+    // TODO fix location of loading icon
     return (
       <div id="loading">
         <Icon name="spinner" spin />

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { spellsFetchData } from '../../actions/spells'
-import SpellsHeaderContainer from '../../containers/spells/SpellsHeaderContainer'
 import SpellsTopBarContainer from '../../containers/spells/SpellsTopBarContainer'
 import SpellsListContainer from '../../containers/spells/SpellsListContainer'
 import '../../styles/spells.css'
@@ -15,9 +14,7 @@ class RootSpells extends Component {
   render() {
     return (
       <div>
-        <SpellsHeaderContainer>
-          <SpellsTopBarContainer />
-        </SpellsHeaderContainer>
+        <SpellsTopBarContainer />
         <SpellsListContainer />
       </div>
     )

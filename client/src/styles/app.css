@@ -123,13 +123,3 @@ span.active a.btn {
 .navbar .logo img {
   display: none;
 }
-
-.right {
-  float: right;
-}
-
-.topbar-right {
-  min-width: 50%;
-  display: inline-block;
-  margin: 0 1rem;
-}
