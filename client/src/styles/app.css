@@ -3,7 +3,7 @@ body {
 }
 
 p, h1, h2, h3, h4, h5, h6, span {
-  color: #616366;
+  color: #333;
 }
 
 a {
@@ -75,6 +75,7 @@ span.active a.btn {
   width: 100%;
   transition: 0.5s ease;
   border-radius: 0;
+  background: #7E69FA;
 }
 
 .navbar .nav {
@@ -87,11 +88,16 @@ span.active a.btn {
 .navbar .nav .item {
   list-style: none;
   display: inline-block;
-  line-height: 34px;
+  line-height: 13px;
   transition: 0.5s ease;
+  color: white;
 }
 
 .navbar .nav .item a {
   text-decoration: none;
   color: inherit;
+}
+
+.nav > li > a:hover {
+  background: #9C9DE3;
 }
