@@ -7,7 +7,7 @@ const SpellbookTopBar = () => (
           <h1>Spellbook</h1>
         </div>
         <div className="spells-header-right">
-          <p>Future site of the Spellbook page</p>
+          <p>Under construction</p>
         </div>
       </div>
     </div>
