@@ -61,11 +61,6 @@ export const clearSpellsFilters = () => ({
   type: types.CLEAR_SPELLS_FILTERS
 })
 
-export const showSpellDetails = id => ({
-  type: types.SHOW_SPELL_DETAILS,
-  id
-})
-
 export const updateSearchTerm = (searchTerm) => ({
   type: types.UPDATE_SPELL_SEARCH_TERM,
   searchTerm

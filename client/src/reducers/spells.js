@@ -85,18 +85,6 @@ const spells = (state = initialState, action) => {
         filterSchool: [],
         filterClass: []
       }
-    case types.SHOW_SPELL_DETAILS:
-      if(state.showDetails.includes(action.id)) {
-        return {
-          ...state,
-          showDetails: state.showDetails.filter(s => s !== action.id)
-        }
-      } 
-
-      return {
-        ...state,
-        showDetails: [...state.showDetails, action.id]
-      }
     case types.UPDATE_SPELL_SEARCH_TERM:
       return {
         ...state,
