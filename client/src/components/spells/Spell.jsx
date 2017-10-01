@@ -18,7 +18,7 @@ class Spell extends Component {
   }
 
   render() {
-    const { spell } = this.props
+    const { spell, selected, onSpellbookClick } = this.props
     return (
       <div className="spell-row flex-container" onClick={() => {
         if(!getSelection().toString())
@@ -36,7 +36,11 @@ class Spell extends Component {
         <div className="flex-item classes">
           <p>{spell.classes.join(", ")}</p>
         </div>
-        <div className="flex-item options">
+        <div className={selected ? 'flex-item options active' : 'flex-item options'}
+          onClick={(e) => {
+            e.stopPropagation()
+            onSpellbookClick(spell.id)
+          }}>
           <Icon name="book"></Icon>
         </div>
         <SpellDetails {...spell} shouldShow={this.state.shouldShowDetails} />
@@ -46,7 +50,9 @@ class Spell extends Component {
 }
 
 Spell.propTypes = {
-  spell: PropTypes.object.isRequired
+  spell: PropTypes.object.isRequired,
+  selected: PropTypes.bool.isRequired,
+  onSpellbookClick: PropTypes.func.isRequired
 }
 
 export default Spell
