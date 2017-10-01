@@ -10,14 +10,16 @@ const SpellsTopBar = ({ numberOfSpells, isLoading, onSearchChange, onShowFilters
   return (
     <span>
       <span>{ numberOfSpells } total</span>
-      <SpellsSearchBar onTermChange={onSearchChange} />
-      <a className="btn btn-default btn-filter" onClick={e => {
-          e.preventDefault()
-          onShowFilters()
-        }}
-      >
-        <span>Filter</span> <Icon name="filter"></Icon>
-      </a>
+        <span className="topbar-right">
+          <SpellsSearchBar onTermChange={onSearchChange} />
+          <a className="btn btn-default btn-filter" onClick={e => {
+              e.preventDefault()
+              onShowFilters()
+            }}
+          >
+            <span>Filter</span> <Icon name="filter"></Icon>
+          </a>
+        </span>
       <SpellFiltersContainer />
     </span>
   )
