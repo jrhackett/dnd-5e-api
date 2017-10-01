@@ -37,7 +37,7 @@ class Spell extends Component {
           <p>{spell.classes.join(", ")}</p>
         </div>
         <div className="flex-item options">
-          <Icon name="ellipsis-h"></Icon>
+          <Icon name="book"></Icon>
         </div>
         <SpellDetails {...spell} shouldShow={this.state.shouldShowDetails} />
       </div>
