@@ -44,4 +44,11 @@ class SpellbookTopBar extends Component {
   }
 }
 
+SpellbookTopBar.propTypes = {
+  title: PropTypes.string.isRequired,
+  numberOfSpells: PropTypes.number.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  onSearchChange: PropTypes.func.isRequired
+}
+
 export default SpellbookTopBar
