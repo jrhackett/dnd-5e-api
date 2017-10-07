@@ -1,19 +1,13 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import SpellsTopBarContainer from '../../containers/spells/SpellsTopBarContainer'
 import SpellsListContainer from '../../containers/spells/SpellsListContainer'
 import '../../styles/spells.css'
 
-class RootSpells extends Component {
+const RootSpells = () => (
+  <div>
+    <SpellsTopBarContainer />
+    <SpellsListContainer />
+  </div>
+)
 
-  render() {
-    return (
-      <div>
-        <SpellsTopBarContainer />
-        <SpellsListContainer />
-      </div>
-    )
-  }
-}
-
-export default connect()(RootSpells)
+export default RootSpells

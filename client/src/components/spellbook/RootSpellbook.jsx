@@ -1,18 +1,12 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import SpellbookTopBarContainer from '../../containers/spellbook/SpellbookTopBarContainer'
 import SpellbookListContainer from '../../containers/spellbook/SpellbookListContainer'
 
-class RootSpellbook extends Component {
+const RootSpellbook = () => (
+  <div>
+    <SpellbookTopBarContainer />
+    <SpellbookListContainer />
+  </div>
+) 
 
-  render() {
-    return (
-      <div>
-        <SpellbookTopBarContainer />
-        <SpellbookListContainer />
-      </div>
-    )
-  }
-}
-
-export default connect()(RootSpellbook)
+export default RootSpellbook
