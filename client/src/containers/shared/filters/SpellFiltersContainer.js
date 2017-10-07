@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import SpellFilters from '../../../components/spells/SpellFilters'
+import SpellFilters from '../../../components/shared/SpellFilters'
 import { clearSpellsFilters } from '../../../actions/spells'
 
 const mapStateToProps = (state, ownProps) => ({

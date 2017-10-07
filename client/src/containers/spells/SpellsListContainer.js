@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { getVisibleSpells } from '../../selectors/spells'
-import SpellsList from '../../components/spells/SpellsList'
+import SpellsList from '../../components/shared/SpellsList'
 
 const mapStateToProps = state => ({
   spells: getVisibleSpells(state),

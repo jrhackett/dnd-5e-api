@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import SpellbookTopBar from './SpellbookTopBar'
+import SpellbookTopBarContainer from '../../containers/spellbook/SpellbookTopBarContainer'
 import SpellbookListContainer from '../../containers/spellbook/SpellbookListContainer'
 
 class RootSpellbook extends Component {
+
   render() {
     return (
       <div>
-        <SpellbookTopBar />
+        <SpellbookTopBarContainer />
         <SpellbookListContainer />
       </div>
     )

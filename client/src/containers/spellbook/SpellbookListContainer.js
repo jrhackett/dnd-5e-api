@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import SpellsList from '../../components/spells/SpellsList'
+import SpellsList from '../../components/shared/SpellsList'
 import { getVisibleSpells } from '../../selectors/spells'
 import { updateSearchTerm } from '../../actions/spells'
 
@@ -10,7 +10,9 @@ const getSpellbookSpells = (spells, state) => {
 }
 
 const mapStateToProps = state => ({
-  spells: getSpellbookSpells(getVisibleSpells(state), state)
+  spells: getSpellbookSpells(getVisibleSpells(state), state),
+  hasErrored: state.spells.hasErrored,
+  isLoading: state.spells.isLoading
 })
 
 const mapDispatchToProps = dispatch => ({

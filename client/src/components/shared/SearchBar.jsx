@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class SpellsSearchBar extends Component {
+class SearchBar extends Component {
   constructor() {
     super();
     this.state = { term: '' }
@@ -20,4 +20,4 @@ class SpellsSearchBar extends Component {
   }
 }
 
-export default SpellsSearchBar
+export default SearchBar

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import SpellFilterLink from '../../../components/spells/SpellFilterLink'
+import FilterLink from '../../../components/shared/FilterLink'
 import { filterSpellsByClass, clearSpellsClassFilter } from '../../../actions/spells'
 
 const getActiveState = (state, text) => {
@@ -26,6 +26,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 const SpellFilterClassContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SpellFilterLink)
+)(FilterLink)
 
 export default SpellFilterClassContainer

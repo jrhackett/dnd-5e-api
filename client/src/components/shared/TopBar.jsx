@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Icon } from 'react-fa'
-import SpellFiltersContainer from '../../containers/spells/filters/SpellFiltersContainer'
-import SpellsSearchBar from '../spells/SpellsSearchBar'
+import SpellFiltersContainer from '../../containers/shared/filters/SpellFiltersContainer'
+import SearchBar from './SearchBar'
 
-class SpellbookTopBar extends Component {
+class SpellsTopBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -19,23 +19,26 @@ class SpellbookTopBar extends Component {
   }
 
   render() {
-    const { onSearchChange } = this.props
+    const { title, numberOfSpells, isLoading, onSearchChange } = this.props
+    if(isLoading)
+      return null
 
     return (
       <div>
         <div className="container spells-header">
           <div className="spells-header-left">
-            <h1>Spellbook</h1>
+            <h1>{ title }</h1>
+            <span>{ numberOfSpells } total</span>
           </div>
           <div className="spells-header-right">
-            <SpellsSearchBar onTermChange={onSearchChange} />
-              <a className="btn btn-default btn-filter" onClick={e => {
-                  e.preventDefault()
-                  this.toggleFilters()
-                }}
-              >
-                <span>Filter</span> <Icon name="filter"></Icon>
-              </a>
+            <SearchBar onTermChange={onSearchChange} />
+            <a className="btn btn-default btn-filter" onClick={e => {
+                e.preventDefault()
+                this.toggleFilters()
+              }}
+            >
+              <span>Filter</span> <Icon name="filter"></Icon>
+            </a>
           </div>
         </div>
         <SpellFiltersContainer shouldShow={ this.state.shouldShowFilters } />
@@ -44,11 +47,11 @@ class SpellbookTopBar extends Component {
   }
 }
 
-SpellbookTopBar.propTypes = {
+SpellsTopBar.propTypes = {
   title: PropTypes.string.isRequired,
   numberOfSpells: PropTypes.number.isRequired,
   isLoading: PropTypes.bool.isRequired,
   onSearchChange: PropTypes.func.isRequired
 }
 
-export default SpellbookTopBar
+export default SpellsTopBar
