@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ProfileTopBar from './ProfileTopBar'
+import ProfileTopBar from './profile/ProfileTopBar'
 
 class RootProfile extends Component {
   render() {
