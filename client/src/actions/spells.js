@@ -15,14 +15,14 @@ export const spellsFetchDataSuccess = items => ({
 
 export const spellsFetchData = url => {
   return (dispatch) => {
-    dispatch(spellsIsLoading());
+    dispatch(spellsIsLoading())
     fetch(url)
       .then((response) => {
         if (!response.ok) {
-          throw Error(response.statusText);
+          throw Error(response.statusText)
         }
         dispatch(spellsIsLoading())
-        return response;
+        return response
       })
       .then((response) => response.json())
       .then((items) => dispatch(spellsFetchDataSuccess(items)))
