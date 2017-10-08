@@ -7,17 +7,9 @@ const initialState = {
 const spellbook = (state = initialState, action) => {
   switch(action.type) {
     case types.TOGGLE_IN_SPELLBOOK:
-      if(state.selected.includes(action.id)) {
-        return {
-          ...state,
-          selected: state.selected.filter(i => i !== action.id)
-        }
-      } else {
-        return {
-          ...state,
-          selected: [...state.selected, action.id]
-        }
-      }
+      return state.selected.includes(action.id) ?
+        { ...state, selected: state.selected.filter(i => i !== action.id) } :
+        { ...state, selected: [...state.selected, action.id] }
     default:
       return state
   }
