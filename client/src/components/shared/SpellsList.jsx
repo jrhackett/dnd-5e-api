@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SpellContainer from '../../containers/spells/SpellContainer'
+import Loading from './Loading'
 import { Icon } from 'react-fa'
 
 const SpellsList = ({ spells, hasErrored, isLoading }) => {
@@ -9,17 +10,14 @@ const SpellsList = ({ spells, hasErrored, isLoading }) => {
     return <p>Sorry! There was an error loading the spells</p>
 
   if(isLoading)
-    // TODO fix location of loading icon
     return (
-      <div id="loading">
-        <Icon name="spinner" spin />
-      </div>
+      <Loading />
     )
 
   if(spells.length === 0)
     return (
       <div className="container">
-        <span>There are no spells that match these filters</span>
+        <span>There are no spells here.</span>
       </div>
     )
 
