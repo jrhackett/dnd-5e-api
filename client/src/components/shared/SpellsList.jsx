@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SpellContainer from '../../containers/spells/SpellContainer'
 import Loading from './Loading'
-import { Icon } from 'react-fa'
 
 const SpellsList = ({ spells, hasErrored, isLoading }) => {
     
