@@ -4,14 +4,6 @@ const spellDao = new SpellDao()
 
 class SpellEngine {
 
-  constructor() {
-    this.validLevels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    this.validSchools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment',
-    'Evocation', 'Illusion', 'Necromancy', 'Transmutation']
-    this.validClasses = ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger',
-    'Sorcerer', 'Warlock', 'Wizard']
-  }
-
   spells = (res) => {
     spellDao.spells({}, res)
   }
