@@ -1,11 +1,11 @@
 var express = require('express'),
-    exphbs = require('express-handlebars'),
-    app = express(),
-    mongoose = require('mongoose'),
-    morgan = require('morgan'),
-    promise = require('bluebird'),
-    config = require('./config.js'),
-    port = config.port
+  exphbs = require('express-handlebars'),
+  app = express(),
+  mongoose = require('mongoose'),
+  morgan = require('morgan'),
+  promise = require('bluebird'),
+  config = require('./config.js'),
+  port = config.port
 
 mongoose.Promise = promise
 mongoose.connect(config.database_url, { useMongoClient: true })
