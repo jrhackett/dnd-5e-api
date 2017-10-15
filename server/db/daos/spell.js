@@ -19,12 +19,10 @@ class SpellDao {
 
   deleteSpell = (id, res) => {
     Spell.findById(id, (err, spell) => {
-      spell.remove((err, spell) => {
-        if(err) {
-          console.log('DELETE Error: There was a problem deleting: ' + err);
-        } else {
-          res.sendStatus(200);
-        }
+      spell.remove((err, s) => {
+        if(err)
+          console.log(err) // TODO handle this error
+        res.sendStatus(200)
       })
     })
   }
