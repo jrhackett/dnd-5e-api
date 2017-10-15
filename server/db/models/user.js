@@ -1,7 +1,7 @@
-var mongoose = require('mongoose')
-var bcrypt = require('bcrypt')
+const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 
-var userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
   email: {
     type: String,
     unique: true,
@@ -25,7 +25,7 @@ var userSchema = mongoose.Schema({
 })
 
 userSchema.pre('save', function (next) {
-  var user = this;
+  const user = this;
   bcrypt.hash(user.password, 10, function (err, hash){
     if (err) {
       return next(err);

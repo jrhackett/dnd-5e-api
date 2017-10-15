@@ -1,6 +1,6 @@
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-var spellSchema = mongoose.Schema({
+const spellSchema = mongoose.Schema({
   school : { type: String, default: '' },
   name : { type: String, default: '' },
   level : { type: String, default: '' },
