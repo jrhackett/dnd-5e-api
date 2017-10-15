@@ -11,4 +11,8 @@ module.exports = app => {
       spellEngine.spells(res)
   })
 
+  app.post('/api/v1/spells', (req, res) => {
+    spellEngine.createSpell(req)
+  })
+
 }
