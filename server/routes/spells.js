@@ -12,7 +12,11 @@ module.exports = app => {
   })
 
   app.post('/api/v1/spells', (req, res) => {
-    spellEngine.createSpell(req)
+    spellEngine.createSpell(req, res)
+  })
+
+  app.delete('/api/v1/spells', (req, res) => {
+    spellEngine.deleteSpell(req, res)
   })
 
 }

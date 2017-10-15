@@ -19,10 +19,14 @@ class SpellEngine {
     spellDao.spells(query, res)
   }
 
-  createSpell = (req) => {
+  createSpell = (req, res) => {
     // TODO check that all fields in req.body are relevant
     let newSpell = Spell({ ...req.body })
-    spellDao.createSpell(newSpell)
+    spellDao.createSpell(newSpell, res)
+  }
+
+  deleteSpell = (req, res) => {
+    spellDao.deleteSpell(req.body.id, res)
   }
 
   // helper method used to convert url query parameters to keys that match the spells schema

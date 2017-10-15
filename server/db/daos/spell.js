@@ -9,11 +9,23 @@ class SpellDao {
     })
   }
 
-  createSpell = (spell) => {
+  createSpell = (spell, res) => {
     spell.save(function(err) {
       if(err)
         console.log(err) // TODO handle this error
       res.sendStatus(200);
+    })
+  }
+
+  deleteSpell = (id, res) => {
+    Spell.findById(id, (err, spell) => {
+      spell.remove((err, spell) => {
+        if(err) {
+          console.log('DELETE Error: There was a problem deleting: ' + err);
+        } else {
+          res.sendStatus(200);
+        }
+      })
     })
   }
 }
