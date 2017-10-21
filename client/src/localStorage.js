@@ -21,6 +21,6 @@ export const saveState = (state) => {
     localStorage.setItem('spellbook', serializedState)
   }
   catch(err) {
-    // Ignore write errors for now
+    console.log(`Error while saving state to localStorage: ${err}`)
   }
 }
