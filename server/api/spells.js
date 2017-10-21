@@ -3,7 +3,11 @@ import Spell from '../db/models/spell'
 class SpellEngine {
 
   spells = (res) => {
-    spellDao.spells({}, res)
+    Spell.find().exec(function(err, spells) {
+      if(err)
+        console.log(err) // TODO handle error
+      res.json(spells)
+    })
   }
 
   spellsByQuery = (req, res) => {
@@ -21,14 +25,19 @@ class SpellEngine {
   }
 
   createSpell = (req, res) => {
-    const result = Spell.create(Spell({ ...req.body }))
-    if(result)
+    Spell({ ...req.body }).save(function(err) {
+      if(err)
+        console.log(err) // TODO handle error
       res.sendStatus(204)
-    res.sendStatus(500)
+    })
   }
 
   deleteSpell = (req, res) => {
-    Spell.findById(req.body.id).remove()
+    Spell.findByIdAndRemove(req.body.id, function(err) {
+      if(err)
+        console.log(err) // TODO handle error
+      res.sendStatus(204)
+    })
   }
 
   // helper method used to convert url query parameters to keys that match the spells schema
