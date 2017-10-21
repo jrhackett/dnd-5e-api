@@ -21,4 +21,16 @@ const spellSchema = mongoose.Schema({
   description : { type: String, default: '' }
 })
 
+spellSchema.query.byQuery = function(filter) {
+  return this.find(filter).sort('name')
+}
+
+spellSchema.statics.createSpell = function(spell) {
+  spell.save(function(err) {
+    if(err)
+      return false // TODO actually handle this error
+    return true
+  })
+}
+
 module.exports = mongoose.model('Spell', spellSchema)
