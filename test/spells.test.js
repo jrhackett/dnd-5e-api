@@ -1,5 +1,11 @@
 import { filterSpells } from '../server/routes/spells'
 import Spell from '../server/db/models/spell'
+import chai from 'chai'
+import chaiHttp from 'chai-http'
+import server from '../server/server'
+
+const should = chai.should()
+const expect = chai.expect
 
 const levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 const schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 
@@ -27,12 +33,6 @@ const testSpell = {
 }
 
 process.env.NODE_ENV = 'test'
-
-const chai = require('chai')
-const chaiHttp = require('chai-http')
-const server = require('../server/server')
-const should = chai.should()
-const expect = chai.expect
 
 chai.use(chaiHttp)
 

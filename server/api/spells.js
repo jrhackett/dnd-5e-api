@@ -3,13 +3,8 @@ import Spell from '../db/models/spell'
 class SpellEngine {
 
   getSpells = (req, res) => {
-    // construct query object from the url query parameters
-    let query = Object.assign(
-      {},
-      ...Object.keys(req.query)
-        .map(key => ({[this._fixKey(key)]: req.query[key]}))
-    )
-    Spell.find().byQuery(query).exec(function(err, spells) {
+    const query = { ...Object.keys(req.query).map(key => ({ [this._fixKey(key)]: req.query[key] })) }
+    Spell.find(query).sort('name').exec(function(err, spells) {
       if(err)
         console.log(err) // TODO handle error
       res.json(spells)

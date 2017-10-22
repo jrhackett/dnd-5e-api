@@ -21,8 +21,4 @@ const spellSchema = mongoose.Schema({
   description: { type: String, default: '' }
 })
 
-spellSchema.query.byQuery = function(filter) {
-  return this.find(filter).sort('name')
-}
-
 module.exports = mongoose.model('Spell', spellSchema)
