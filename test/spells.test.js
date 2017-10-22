@@ -1,20 +1,41 @@
 import { filterSpells } from '../server/routes/spells'
+import Spell from '../server/db/models/spell'
 
-let levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-let schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation']
-let classes = ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer', 'Warlock', 'Wizard']
+const levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation']
+const classes = ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer', 'Warlock', 'Wizard']
+const testSpell = {
+  school: 'Necromancy',
+  name: 'Test Spell',
+  level: '1',
+  ee: '0',
+  ritual: 'No',
+  casting_time: '1 Action',
+  scag: '0',
+  source: 'Test book',
+  range: '120',
+  classes: [ 'Bard', 'Warlock' ],
+  components: 'V',
+  duration: 'Concentration, up to 1 minute',
+  athigherlevel: 'Nothing specified',
+  concentration: 'Yes',
+  slug: 'test-spell',
+  page: '100',
+  description: 'Test Spell Description',
+  id: '1000001'
+}
 
 process.env.NODE_ENV = 'test'
 
-let chai = require('chai')
-let chaiHttp = require('chai-http')
-let server = require('../server/server')
-let should = chai.should()
-let expect = chai.expect
+const chai = require('chai')
+const chaiHttp = require('chai-http')
+const server = require('../server/server')
+const should = chai.should()
+const expect = chai.expect
 
 chai.use(chaiHttp);
 
-describe('Server responds appropriately to spell requests', () => {
+describe('GET /api/v1/spells', () => {
   
   it('GET /api/v1/spells', (done) => {
     chai.request(server)
@@ -140,44 +161,6 @@ describe('Server responds appropriately to spell requests', () => {
     })
   })
 
-  it('POST /api/v1/spells', (done) => {
-    const spell = {
-      school: 'Necromancy',
-      name: 'Test Spell',
-      level: '1',
-      ee: '0',
-      ritual: 'No',
-      casting_time: '1 Action',
-      scag: '0',
-      source: 'Test book',
-      range: '120',
-      classes: [ 'Bard', 'Warlock' ],
-      components: 'V',
-      duration: 'Concentration, up to 1 minute',
-      athigherlevel: 'Nothing specified',
-      concentration: 'Yes',
-      slug: 'test-spell',
-      page: '100',
-      description: 'Test Spell Description',
-      id: '1000001'
-    }
-
-    chai.request(server)
-      .post('/api/v1/spells')
-      .send(spell)
-      .end((err, res) => {
-        res.should.have.status(204)
-      })
-  })
-
-  it('DELETE /api/v1/spells', (done) => {
-    chai.request(server)
-      .delete('/api/v1/spells')
-      .end((err, res) => {
-        res.should.have.status(204)
-      })
-  })
-
   it('GET /api/v1/spells/level/bogus should 404', (done) => {
     chai.request(server)
       .get('/api/v1/spells/level/bogus')
@@ -232,4 +215,30 @@ describe('Server responds appropriately to spell requests', () => {
       })
   })
 
+})
+
+describe('POST spells', () => {
+  it('POST /api/v1/spells', (done) => {
+    chai.request(server)
+      .post('/api/v1/spells')
+      .send(testSpell)
+      .end((err, res) => {
+        res.should.have.status(204)
+        done()
+      })
+  })
+})
+
+describe('DELETE spells', () => {
+  it('DELETE /api/v1/spells/:id', (done) => {
+    let spellToSave = Spell(testSpell)
+    spellToSave.save((err, spell) => {
+      chai.request(server)
+        .delete('/api/v1/spells/1000001')
+        .end((err, res) => {
+          res.should.have.status(204)
+          done()
+        })
+    })
+  })
 })

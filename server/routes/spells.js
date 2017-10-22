@@ -15,7 +15,7 @@ module.exports = app => {
     spellEngine.createSpell(req, res)
   })
 
-  app.delete('/api/v1/spells', (req, res) => {
+  app.delete('/api/v1/spells/:id', (req, res) => {
     spellEngine.deleteSpell(req, res)
   })
 

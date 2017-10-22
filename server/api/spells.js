@@ -33,7 +33,7 @@ class SpellEngine {
   }
 
   deleteSpell = (req, res) => {
-    Spell.findByIdAndRemove(req.body.id, function(err) {
+    Spell.remove({ id: req.params.id }, function(err) {
       if(err)
         console.log(err) // TODO handle error
       res.sendStatus(204)
