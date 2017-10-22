@@ -2,7 +2,8 @@ import { filterSpells } from '../server/routes/spells'
 import Spell from '../server/db/models/spell'
 
 const levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-const schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation']
+const schools = ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 
+  'Necromancy', 'Transmutation']
 const classes = ['Bard', 'Cleric', 'Druid', 'Paladin', 'Ranger', 'Sorcerer', 'Warlock', 'Wizard']
 const testSpell = {
   school: 'Necromancy',
@@ -33,7 +34,7 @@ const server = require('../server/server')
 const should = chai.should()
 const expect = chai.expect
 
-chai.use(chaiHttp);
+chai.use(chaiHttp)
 
 describe('GET /api/v1/spells', () => {
   
@@ -218,6 +219,7 @@ describe('GET /api/v1/spells', () => {
 })
 
 describe('POST spells', () => {
+
   it('POST /api/v1/spells', (done) => {
     chai.request(server)
       .post('/api/v1/spells')
@@ -227,9 +229,11 @@ describe('POST spells', () => {
         done()
       })
   })
+
 })
 
 describe('DELETE spells', () => {
+
   it('DELETE /api/v1/spells/:id', (done) => {
     let spellToSave = Spell(testSpell)
     spellToSave.save((err, spell) => {
@@ -241,4 +245,5 @@ describe('DELETE spells', () => {
         })
     })
   })
+
 })
