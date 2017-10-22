@@ -2,15 +2,7 @@ import Spell from '../db/models/spell'
 
 class SpellEngine {
 
-  spells = (res) => {
-    Spell.find().exec(function(err, spells) {
-      if(err)
-        console.log(err) // TODO handle error
-      res.json(spells)
-    })
-  }
-
-  spellsByQuery = (req, res) => {
+  getSpells = (req, res) => {
     // construct query object from the url query parameters
     let query = Object.assign(
       {},
