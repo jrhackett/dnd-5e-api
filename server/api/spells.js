@@ -6,7 +6,7 @@ class SpellEngine {
     const query = { ...Object.keys(req.query).map(key => ({ [this._fixKey(key)]: req.query[key] })) }
     Spell.find(query).sort('name').exec(function(err, spells) {
       if(err)
-        console.log(err) // TODO handle error
+        console.log(err)
       res.json(spells)
     })
   }
@@ -14,7 +14,7 @@ class SpellEngine {
   createSpell = (req, res) => {
     Spell({ ...req.body }).save(function(err) {
       if(err)
-        console.log(err) // TODO handle error
+        console.log(err)
       res.sendStatus(204)
     })
   }
@@ -22,7 +22,7 @@ class SpellEngine {
   deleteSpell = (req, res) => {
     Spell.remove({ id: req.params.id }, function(err) {
       if(err)
-        console.log(err) // TODO handle error
+        console.log(err)
       res.sendStatus(204)
     })
   }
