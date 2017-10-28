@@ -19,6 +19,14 @@ class SpellEngine {
     })
   }
 
+  updateSpell = (req, res) => {
+    Spell.update({ id: req.body.id }, { ...req.body }, { multi: true }, function(err, numAffected) {
+      if(err)
+        console.log(err)
+      res.sendStatus(204)
+    })
+  }
+
   deleteSpell = (req, res) => {
     Spell.remove({ id: req.params.id }, function(err) {
       if(err)

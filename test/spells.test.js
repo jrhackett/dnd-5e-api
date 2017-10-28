@@ -230,6 +230,8 @@ describe('POST spells', () => {
       })
   })
 
+  // TODO write negative tests
+
 })
 
 describe('DELETE spells', () => {
@@ -245,5 +247,7 @@ describe('DELETE spells', () => {
         })
     })
   })
+
+  // TODO write negative tests
 
 })

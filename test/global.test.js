@@ -26,4 +26,6 @@ describe('Server responds appropriately general requests', () => {
       })
   })
 
+  // TODO add permission tests for users after they're implemented
+
 })
