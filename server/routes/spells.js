@@ -1,23 +1,23 @@
+import express from 'express'
 import SpellEngine from '../api/spells'
 
-module.exports = app => {
+const router = express.Router()
+const spellEngine = new SpellEngine()
 
-  const spellEngine = new SpellEngine()
+router.get('/', (req, res) => {
+  spellEngine.getSpells(req, res)
+})
 
-  app.get('/api/v1/spells', (req, res) => {
-    spellEngine.getSpells(req, res)
-  })
+router.post('/', (req, res) => {
+  spellEngine.createSpell(req, res)
+})
 
-  app.post('/api/v1/spells', (req, res) => {
-    spellEngine.createSpell(req, res)
-  })
+router.put('/', (req, res) => {
+  spellEngine.updateSpell(req, res)
+})
 
-  app.put('/api/v1/spells', (req, res) => {
-    spellEngine.updateSpell(req, res)
-  })
+router.delete('/', (req, res) => {
+  spellEngine.deleteSpell(req, res)
+})
 
-  app.delete('/api/v1/spells/:id', (req, res) => {
-    spellEngine.deleteSpell(req, res)
-  })
-
-}
+module.exports = router
