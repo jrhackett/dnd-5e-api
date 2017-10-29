@@ -16,7 +16,7 @@ router.put('/', (req, res) => {
   spellEngine.updateSpell(req, res)
 })
 
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
   spellEngine.deleteSpell(req, res)
 })
 

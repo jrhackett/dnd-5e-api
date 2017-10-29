@@ -29,7 +29,8 @@ const testSpell = {
   slug: 'test-spell',
   page: '100',
   description: 'Test Spell Description',
-  id: '1000001'
+  id: '1000001',
+  bogus: 'bogus'
 }
 
 process.env.NODE_ENV = 'test'
