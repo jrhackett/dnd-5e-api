@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SpellContainer from '../../containers/spells/SpellContainer'
+import SpellContainer from '../../containers/shared/SpellContainer'
 import Loading from './Loading'
 
 const SpellsList = ({ spells, hasErrored, isLoading }) => {
