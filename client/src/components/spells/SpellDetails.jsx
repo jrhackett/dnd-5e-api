@@ -5,14 +5,14 @@ const Spell = ({ shouldShow, school, classes, components, duration, casting_time
   if(shouldShow) {
     return (
       <div className="flex-item details">
-        <p className="extra"><span className="detail-label">School:</span> {school}</p>
-        <p className="extra"><span className="detail-label">Classes:</span> {classes.join(", ")}</p>
-        <p><span className="detail-label">Components:</span> {components}</p>
-        <p><span className="detail-label">Duration:</span> {duration}</p>
-        <p><span className="detail-label">Casting Time:</span> {casting_time}</p>
-        <p><span className="detail-label">Range:</span> {range}</p>
-        <p><span className="detail-label">Description:</span> {description}</p>
-        <p><span className="detail-label">At High Levels:</span> {athigherlevel}</p>
+        <p className="extra"><span className="detail-label">School:</span> { school }</p>
+        <p className="extra"><span className="detail-label">Classes:</span> { classes.join(", ") }</p>
+        <p><span className="detail-label">Components:</span> { components }</p>
+        <p><span className="detail-label">Duration:</span> { duration }</p>
+        <p><span className="detail-label">Casting Time:</span> { casting_time }</p>
+        <p><span className="detail-label">Range:</span> { range }</p>
+        <p><span className="detail-label">Description:</span> { description }</p>
+        <p><span className="detail-label">At High Levels:</span> { athigherlevel }</p>
       </div>
     )
   }

@@ -31,7 +31,7 @@ class SpellsTopBar extends Component {
             <span>{ numberOfSpells } total</span>
           </div>
           <div className="spells-header-right">
-            <SearchBar onTermChange={onSearchChange} />
+            <SearchBar onTermChange={ onSearchChange } />
             <a className="btn btn-default btn-filter" onClick={e => {
                 e.preventDefault()
                 this.toggleFilters()

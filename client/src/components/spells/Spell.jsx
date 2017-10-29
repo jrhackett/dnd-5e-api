@@ -20,30 +20,30 @@ class Spell extends Component {
   render() {
     const { spell, selected, onSpellbookClick } = this.props
     return (
-      <div className="spell-row flex-container" onClick={() => {
+      <div className="spell-row flex-container" onClick={ () => {
         if(!getSelection().toString())
           this.toggleShowDetails()
       }}>
         <div className="flex-item name">
-          <p>{spell.name}</p>
+          <p>{ spell.name }</p>
         </div>
         <div className="flex-item level">
-          <p>{spell.level}</p>
+          <p>{ spell.level }</p>
         </div>
         <div className="flex-item school">
-          <p>{spell.school}</p>
+          <p>{ spell.school }</p>
         </div>
         <div className="flex-item classes">
-          <p>{spell.classes.join(", ")}</p>
+          <p>{ spell.classes.join(", ") }</p>
         </div>
-        <div className={selected ? 'flex-item options active' : 'flex-item options'}
+        <div className={ selected ? 'flex-item options active' : 'flex-item options' }
           onClick={(e) => {
             e.stopPropagation()
             onSpellbookClick(spell.id)
           }}>
           <Icon name="book"></Icon>
         </div>
-        <SpellDetails {...spell} shouldShow={this.state.shouldShowDetails} />
+        <SpellDetails { ...spell } shouldShow={ this.state.shouldShowDetails } />
       </div>
     )
   }

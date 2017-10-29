@@ -24,9 +24,9 @@ class Root extends Component {
             <div>
               <Navigation />
               <Switch>
-                <Route path="/spellbook" component={RootSpellbook} />
-                <Route path="/profile" component={RootProfile} />
-                <Route path="/" component={RootSpells} />
+                <Route path="/spellbook" component={ RootSpellbook } />
+                <Route path="/profile" component={ RootProfile } />
+                <Route path="/" component={ RootSpells } />
               </Switch>
             </div>
           </BrowserRouter>

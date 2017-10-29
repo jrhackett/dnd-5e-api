@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const SpellFilterLink = ({ text, active, onClick }) => {
   return (
-    <span className={active ? 'active' : ''}>
-      <a className="btn btn-default" onClick={e => {
+    <span className={ active ? 'active' : '' }>
+      <a className="btn btn-default" onClick={ (e) => {
           e.preventDefault()
           onClick(text)
         }}
