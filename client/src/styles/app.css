@@ -3,7 +3,7 @@ body {
 }
 
 p, h1, h2, h3, h4, h5, h6, span {
-  color: #616366;
+  color: #333;
 }
 
 a {
@@ -35,6 +35,11 @@ span.fa {
   border-radius: 2px;
 }
 
+.btn-filter {
+  padding: 3px 8px;
+  margin-top: -1px;
+}
+
 .filters, .filter-links {
   margin-bottom: 1rem;
 }
@@ -58,10 +63,13 @@ span.active a.btn {
   min-width: 60%;
   width: 75%;
   margin-right: 1rem;
+  height: 100%;
 }
 
 .search input {
   width: 100%;
+  height: 100%;
+  padding: 0 0.5rem;
 }
 
 .search input:focus {
@@ -70,9 +78,12 @@ span.active a.btn {
 
 .navbar {
   position: relative;
-  height: 80px;
+  height: 34px;
+  min-height: initial;
   width: 100%;
   transition: 0.5s ease;
+  border-radius: 0;
+  background: #6C57E6;
 }
 
 .navbar .nav {
@@ -80,28 +91,18 @@ span.active a.btn {
   padding: 0;
   display: inline-block;
   float: right;
-  margin-right: 5%;
+}
+
+.navbar .nav.logo {
+  float: left;
 }
 
 .navbar .nav .item {
   list-style: none;
   display: inline-block;
-  font-size: 18px;
-  padding: 5px;
-  font-weight: 300;
-  line-height: 80px;
-  margin-right: 20px;
+  line-height: 13px;
   transition: 0.5s ease;
-}
-
-.navbar .nav .item .contact {
-  display: inline-block;
-  background-color: #ffffff;
-  height: 40px;
-  line-height: 30px;
-  padding: 5px;
-  border-radius: 2px;
-  transition: 0.5s ease;
+  color: white;
 }
 
 .navbar .nav .item a {
@@ -109,27 +110,10 @@ span.active a.btn {
   color: inherit;
 }
 
-.navbar .logo {
-  float: left;
-  display: inline-block;
-  margin-top: 5px;
-  margin-left: 5%;
-  width: 70px;
-  height: 70px;
-  background-color: firebrick;
-  transition: 0.5s ease;
+.nav > li > a:hover, .nav > li > a:active {
+  background: #9C9DE3;
 }
 
-.navbar .logo img {
-  display: none;
-}
-
-.right {
-  float: right;
-}
-
-.topbar-right {
-  min-width: 50%;
-  display: inline-block;
-  margin: 0 1rem;
+.nav > li > a:focus {
+  background: initial;
 }

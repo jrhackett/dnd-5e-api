@@ -15,14 +15,14 @@ export const spellsFetchDataSuccess = items => ({
 
 export const spellsFetchData = url => {
   return (dispatch) => {
-    dispatch(spellsIsLoading());
+    dispatch(spellsIsLoading())
     fetch(url)
       .then((response) => {
         if (!response.ok) {
-          throw Error(response.statusText);
+          throw Error(response.statusText)
         }
         dispatch(spellsIsLoading())
-        return response;
+        return response
       })
       .then((response) => response.json())
       .then((items) => dispatch(spellsFetchDataSuccess(items)))
@@ -59,15 +59,6 @@ export const clearSpellsClassFilter = () => ({
 
 export const clearSpellsFilters = () => ({
   type: types.CLEAR_SPELLS_FILTERS
-})
-
-export const showSpellDetails = id => ({
-  type: types.SHOW_SPELL_DETAILS,
-  id
-})
-
-export const showFilters = () => ({
-  type: types.SHOW_SPELL_FILTERS,
 })
 
 export const updateSearchTerm = (searchTerm) => ({

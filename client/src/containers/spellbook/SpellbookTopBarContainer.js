@@ -2,11 +2,11 @@ import { connect } from 'react-redux'
 import TopBarContainer from '../shared/TopBarContainer'
 
 const mapStateToProps = state => ({
-  title: 'Spells'
+  title: 'Spellbook'
 })
 
-const SpellsTopBarContainer = connect(
+const SpellbookTopBarContainer = connect(
   mapStateToProps
 )(TopBarContainer)
 
-export default SpellsTopBarContainer
+export default SpellbookTopBarContainer

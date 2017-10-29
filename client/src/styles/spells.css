@@ -1,6 +1,19 @@
+.spells-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spells-header-left, .spells-header-right {
+  width: 50%;
+}
+
+.spells-header-right {
+  text-align: right;
+  margin: 3rem 0;
+}
+
 .spells-header h1 {
   margin: 2rem 2rem 3rem 0;
-  color: #7E69FA;
   display: inline-block;
 }
 
@@ -55,7 +68,7 @@
   border-radius: 2px;
   background-color: #fefefe;
   margin: 0.8rem 0;
-  box-shadow: 0px 1px 4px 0px #bcbcbc;
+  box-shadow: 0px 1px 4px 0px #e6e6e6;
 }
 
 .flex-item.details p {
@@ -74,6 +87,10 @@
 
 .extra {
   display: none;    
+}
+
+.flex-item.options.active .fa.fa-book {
+  color: #6C57E6;
 }
 
 @media screen and (max-width: 960px) {

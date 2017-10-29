@@ -8,7 +8,6 @@ const initialState = {
   filterSchool: [],
   filterClass: [],
   showDetails: [],
-  showSpellFilters: false,
   searchTerm: ''
 }
 
@@ -85,23 +84,6 @@ const spells = (state = initialState, action) => {
         filterLevel: [],
         filterSchool: [],
         filterClass: []
-      }
-    case types.SHOW_SPELL_DETAILS:
-      if(state.showDetails.includes(action.id)) {
-        return {
-          ...state,
-          showDetails: state.showDetails.filter(s => s !== action.id)
-        }
-      } 
-
-      return {
-        ...state,
-        showDetails: [...state.showDetails, action.id]
-      }
-    case types.SHOW_SPELL_FILTERS:
-      return {
-        ...state,
-        showSpellFilters: !state.showSpellFilters
       }
     case types.UPDATE_SPELL_SEARCH_TERM:
       return {
