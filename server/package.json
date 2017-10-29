@@ -6,8 +6,8 @@
   "scripts": {
     "coverage": "NODE_ENV=test nyc --reporter=html --reporter=text ./node_modules/.bin/mocha --compilers js:babel-core/register ./test/*.test.js",
     "test": "NODE_ENV=test nyc ./node_modules/.bin/mocha --compilers js:babel-core/register ./test/*.test.js",
-    "start": "nodemon server/server.js --exec babel-node",
-    "build": "babel server -d build",
+    "start": "nodemon src/server.js --exec babel-node",
+    "build": "babel src -d build",
     "serve": "node build/server.js"
   },
   "author": "Jacob Hackett",

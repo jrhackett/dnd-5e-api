@@ -1,8 +1,8 @@
-import { filterSpells } from '../server/routes/spells'
-import Spell from '../server/db/models/spell'
+import { filterSpells } from '../src/routes/spells'
+import Spell from '../src/db/models/spell'
 import chai from 'chai'
 import chaiHttp from 'chai-http'
-import server from '../server/server'
+import server from '../src/server'
 
 const should = chai.should()
 const expect = chai.expect
