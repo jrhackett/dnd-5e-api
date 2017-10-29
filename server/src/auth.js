@@ -1,7 +1,8 @@
-var passport = require('passport');
-var BasicStrategy = require('passport-http').BasicStrategy;
-var User = require('./db/models/user');
+import passport from 'passport'
+import passporthttp from 'passport-http'
+import User from './db/models/user'
 
+const BasicStrategy = passporthttp.BasicStrategy
 
 module.exports = (passport, config) => {
   // =========================================================================
@@ -12,15 +13,15 @@ module.exports = (passport, config) => {
 
   // used to serialize the user for the session
   passport.serializeUser(function(user, done) {
-    done(null, user.id);
-  });
+    done(null, user.id)
+  })
 
   // used to deserialize the user
   passport.deserializeUser(function(id, done) {
     User.findById(id, function(err, user) {
-      done(err, user);
-    });
-  });
+      done(err, user)
+    })
+  })
 
   // =========================================================================
   // LOCAL LOGIN =============================================================
@@ -29,31 +30,30 @@ module.exports = (passport, config) => {
   // TODO change this to passport-local strategy instead of basic strategy
 
   passport.use(new BasicStrategy(
-  function(username, password, callback) {
-    User.findOne({ username: username }, function (err, user) {
-      if (err) 
-        return callback(err)
-
-      // No user found with that username
-      if (!user) 
-        return callback(null, false)
-
-      // Make sure the password is correct
-      user.verifyPassword(password, function(err, isMatch) {
-        if (err)
+    function(username, password, callback) {
+      User.findOne({ username: username }, function (err, user) {
+        if (err) 
           return callback(err)
 
-        // Password did not match
-        if (!isMatch) 
+        // No user found with that username
+        if (!user) 
           return callback(null, false)
 
-        // Success
-        return callback(null, user)
-      })
-    })
-  }
-))
-}
+        // Make sure the password is correct
+        user.verifyPassword(password, function(err, isMatch) {
+          if (err)
+            return callback(err)
 
+          // Password did not match
+          if (!isMatch) 
+            return callback(null, false)
+
+          // Success
+          return callback(null, user)
+        })
+      })
+    }
+  ))
+}
 
 exports.isAuthenticated = passport.authenticate('basic', { session : false })
