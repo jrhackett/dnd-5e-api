@@ -9,7 +9,6 @@ build/
 coverage/
 logs/
 
-TODO
 .DS_Store
 
 env.json
