@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import SpellsList from '../../components/shared/SpellsList'
 import { getVisibleSpells } from '../../selectors/spells'
-import { updateSearchTerm } from '../../actions/spells'
 
 const getSpellbookSpells = (spells, state) => {
   return spells.filter(s => state.spellbook.selected.includes(s.id))
@@ -13,15 +12,8 @@ const mapStateToProps = state => ({
   isLoading: state.spells.isLoading
 })
 
-const mapDispatchToProps = dispatch => ({
-  onSearchChange: (term) => {
-    dispatch(updateSearchTerm(term))
-  }
-})
-
 const SpellbookListContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(SpellsList)
 
 export default SpellbookListContainer
