@@ -28,7 +28,7 @@ class SpellsTopBar extends Component {
         <div className="container spells-header">
           <div className="spells-header-left">
             <h1>{ title }</h1>
-            <span>{ numberOfSpells } total</span>
+            <span className="number-of-spells">{ numberOfSpells } total</span>
           </div>
           <div className="spells-header-right">
             <SearchBar onTermChange={ onSearchChange } />
