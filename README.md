@@ -4,12 +4,12 @@ This application helps display and organize spells for Dungeons and Dragons 5e. 
 
 ## Roadmap
 
-* Add users to both the server and UI
+* Add users and sessions to both the server and UI
 * Custom spells in the UI
 * More robust filtering
-* More organized spellbook
+* More organized spellbook views
 * Secure deployment strategy
-* GraphQL
+* Compare spells by some heuristic
 
 ## Credits
 
