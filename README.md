@@ -13,4 +13,6 @@ This application helps display and organize spells for Dungeons and Dragons 5e. 
 
 ## Credits
 
-Jake Hackett 
+Jake Hackett
+
+Soon to be: Jame Grippo
