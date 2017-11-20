@@ -7,6 +7,7 @@ yarn-error.log*
 .nyc_output/
 build/
 coverage/
+access.log
 
 .DS_Store
 
