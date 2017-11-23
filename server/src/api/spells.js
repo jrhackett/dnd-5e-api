@@ -16,17 +16,7 @@ class SpellEngine {
 
   downloadSpells = (req, res) => {
     const query = { ...this._getQuery(req.query), level: '8' }
-    Spell.find(query).sort('name').exec(function(err, spells) {
-      if(err) {
-        console.log(err)
-        res.sendStatus(500) // TODO form a better response than this
-      }
-      json2csv({ data: spells }, function(err, csv) {
-        res.setHeader('Content-disposition', 'attachment; filename=data.csv')
-        res.set('Content-Type', 'text/csv')
-        res.status(200).download(csv)
-      })
-    })
+    // TODO download spells from this query
   }
 
   createSpell = (req, res) => {
