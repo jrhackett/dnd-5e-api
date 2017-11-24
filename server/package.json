@@ -18,6 +18,7 @@
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "fs": "0.0.1-security",
+    "json2csv": "^3.11.5",
     "jsonfile": "^3.0.0",
     "mongoose": "^4.10.2",
     "morgan": "^1.8.2",

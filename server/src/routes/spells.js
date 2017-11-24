@@ -20,4 +20,8 @@ router.delete('/:id', (req, res) => {
   spellEngine.deleteSpell(req, res)
 })
 
+router.get('/export', (req, res) => {
+  spellEngine.downloadSpells(req, res)
+})
+
 module.exports = router
