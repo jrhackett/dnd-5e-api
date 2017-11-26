@@ -1,5 +1,5 @@
 import Spell from '../db/models/spell'
-import json2csv from 'json2csv'
+import csv from 'express-csv'
 
 class SpellEngine {
 
@@ -17,13 +17,9 @@ class SpellEngine {
     Spell.find(query).sort('name').exec(function(err, spells) {
       if(err)
         res.status(500).send(err)
-      json2csv({ data: spells, fields: Object.keys(spells[0]) }, function(err, spellscsv) {
-        if(err)
-          res.status(500).send(err)
-        res.header('Content-Disposition', 'attachment; filename=spells.csv')
-        res.type('text/csv')
-        res.status(200).send(spellscsv)
-      })
+      // hacky hack to get the CSV conversion to work properly
+      const spellsObj = JSON.parse(JSON.stringify(spells))
+      res.status(200).csv(spellsObj)
     })
   }
 
