@@ -6,7 +6,7 @@ This application helps display and organize spells for Dungeons and Dragons 5e. 
 
 * Add users and sessions to both the server and UI
 * Custom spells in the UI
-* More robust filtering
+* More robust filtering and sorting support in UI and API
 * More organized spellbook views
 * Secure deployment strategy
 * Compare spells by some heuristic
@@ -15,4 +15,4 @@ This application helps display and organize spells for Dungeons and Dragons 5e. 
 
 Jake Hackett
 
-Soon to be: Jame Grippo
+Soon to be: James Grippo
