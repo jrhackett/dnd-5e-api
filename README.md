@@ -10,6 +10,7 @@ This application helps display and organize spells for Dungeons and Dragons 5e. 
 * More organized spellbook views
 * Secure deployment strategy
 * Compare spells by some heuristic
+* Spell exports by CSV and spell cards
 
 ## Credits
 
