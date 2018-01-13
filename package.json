@@ -1,0 +1,24 @@
+{
+  "name": "dnd-5e-api",
+  "version": "1.0.0",
+  "description": "This application helps display and organize spells for Dungeons and Dragons 5e. It includes an API to query spells as well as a frontend that has a number of features. This project serves as a place to practice full stack development while also giving friends a way to organize spells in 5e. The server and client are both progressing and I am adding features as I can. The goal is to create a tool that makes it easier to organize resources for players and game masters.",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "eslint": "^4.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrhackett/dnd-5e-spells.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrhackett/dnd-5e-spells/issues"
+  },
+  "homepage": "https://github.com/jrhackett/dnd-5e-spells#readme"
+}
