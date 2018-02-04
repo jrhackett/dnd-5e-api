@@ -11,7 +11,6 @@ const spellRouter = require('./routes/spells')
 
 const app = express()
 const port = config.port
-// const accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' })
 
 mongoose.Promise = promise
 mongoose.connect(config.database_url, { useMongoClient: true })
@@ -20,7 +19,10 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// app.use(morgan('combined', { stream: accessLogStream }))
+if (process.env.NODE_ENV === 'development') {
+  const accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' })
+  app.use(morgan('combined', { stream: accessLogStream }))
+}
 
 if (process.env.NODE_ENV === 'production')
   app.use(express.static(path.join(__dirname, '..', '..', 'client/build')));
