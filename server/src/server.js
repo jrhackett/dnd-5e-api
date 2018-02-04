@@ -22,6 +22,11 @@ app.use(morgan('combined', { stream: accessLogStream }))
 
 app.use('/api/v1/spells', spellRouter)
 
+// Express only serves static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('../../client/build'));
+}
+
 const server = app.listen(port)
 
 module.exports = app
