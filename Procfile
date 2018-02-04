@@ -1,1 +1,1 @@
-web: cd server && npm i && npm run build && node ./build/server.js
+web: node server/build/server.js

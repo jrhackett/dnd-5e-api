@@ -5,7 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 
 .nyc_output/
-server/build
+client/build
 coverage/
 access.log
 
