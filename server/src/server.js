@@ -5,6 +5,7 @@ const promise = require('bluebird')
 const bodyParser = require('body-parser')
 const fs = require('fs')
 const path = require('path')
+const cors = require('cors')
 const config = require('./config')
 const spellRouter = require('./routes/spells')
 
@@ -15,17 +16,13 @@ const accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/acces
 mongoose.Promise = promise
 mongoose.connect(config.database_url, { useMongoClient: true })
 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(morgan('combined', { stream: accessLogStream }))
 
 app.use('/api/v1/spells', spellRouter)
-
-// Express only serves static assets in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('../../client/build'));
-}
 
 const server = app.listen(port)
 
