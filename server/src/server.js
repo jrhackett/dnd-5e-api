@@ -22,6 +22,10 @@ app.use(bodyParser.json())
 
 // app.use(morgan('combined', { stream: accessLogStream }))
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('../../client/build'));
+}
+
 app.use('/api/v1/spells', spellRouter)
 
 const server = app.listen(port)
