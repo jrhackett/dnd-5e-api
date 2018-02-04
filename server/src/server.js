@@ -11,7 +11,7 @@ const spellRouter = require('./routes/spells')
 
 const app = express()
 const port = config.port
-const accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' })
+// const accessLogStream = fs.createWriteStream(path.join(__dirname, '../logs/access.log'), { flags: 'a' })
 
 mongoose.Promise = promise
 mongoose.connect(config.database_url, { useMongoClient: true })
