@@ -1,6 +1,5 @@
 {
   "database_url" : "url",
   "port": 8081,
-  "testingPort": 8080,
-  "sessionSecret": "secret"
+  "testingPort": 8080
 }
