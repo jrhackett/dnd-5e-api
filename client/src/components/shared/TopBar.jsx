@@ -29,7 +29,7 @@ class SpellsTopBar extends Component {
           <div className="spells-header-left">
             <h1>{ title }</h1>
             <span className="number-of-spells">{ numberOfSpells } total</span>
-            <a href="/api/v1/spells/export" download>Export</a>
+            {/*<a href="/api/v1/spells/export" download>Export</a>*/}
           </div>
           <div className="spells-header-right">
             <SearchBar onTermChange={ onSearchChange } />
