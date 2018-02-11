@@ -1,12 +1,22 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from '../../styles/spells'
+import flex from '../../styles/flex'
+import colors from '../../styles/colors'
 import { css, cx } from 'react-emotion'
 import { Icon } from 'react-fa'
 import SpellDetails from './SpellDetails'
 
 const active = css`
-  color: #6C57E6;
+  color: ${ colors.purple };
+`
+
+const row = css`
+  padding: 1rem 3rem;
+  border-radius: 2px;
+  background-color: ${ colors.offWhite };
+  margin: 0.8rem 0;
+  box-shadow: 0px 1px 4px 0px ${ colors.lightGray };
 `
 
 class Spell extends Component {
@@ -26,23 +36,23 @@ class Spell extends Component {
   render() {
     const { spell, selected, onSpellbookClick } = this.props
     return (
-      <div className="spell-row flex-container" onClick={ () => {
+      <div className={ cx(flex.flexContainer, row) } onClick={ () => {
         if(!getSelection().toString())
           this.toggleShowDetails()
       }}>
-        <div className={ cx(styles.flexItem, styles.name) }>
+        <div className={ cx(flex.flexItem, styles.name) }>
           <p>{ spell.name }</p>
         </div>
-        <div className={ cx(styles.flexItem, styles.level) }>
+        <div className={ cx(flex.flexItem, styles.level) }>
           <p>{ spell.level }</p>
         </div>
-        <div className={ cx(styles.flexItem, styles.school) }>
+        <div className={ cx(flex.flexItem, styles.school) }>
           <p>{ spell.school }</p>
         </div>
-        <div className={ cx(styles.flexItem, styles.classes) }>
+        <div className={ cx(flex.flexItem, styles.classes) }>
           <p>{ spell.classes.join(", ") }</p>
         </div>
-        <div className={ cx(styles.flexItem, styles.options, { [active]: selected }) }
+        <div className={ cx(flex.flexItem, styles.options, { [active]: selected }) }
           onClick={(e) => {
             e.stopPropagation()
             onSpellbookClick(spell.id)
