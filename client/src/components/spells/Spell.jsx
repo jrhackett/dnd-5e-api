@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styles from '../../styles/spells'
+import { css, cx } from 'react-emotion'
 import { Icon } from 'react-fa'
 import SpellDetails from './SpellDetails'
+
+const active = css`
+  color: #6C57E6;
+`
 
 class Spell extends Component {
   constructor(props) {
@@ -24,19 +30,19 @@ class Spell extends Component {
         if(!getSelection().toString())
           this.toggleShowDetails()
       }}>
-        <div className="flex-item name">
+        <div className={ cx(styles.flexItem, styles.name) }>
           <p>{ spell.name }</p>
         </div>
-        <div className="flex-item level">
+        <div className={ cx(styles.flexItem, styles.level) }>
           <p>{ spell.level }</p>
         </div>
-        <div className="flex-item school">
+        <div className={ cx(styles.flexItem, styles.school) }>
           <p>{ spell.school }</p>
         </div>
-        <div className="flex-item classes">
+        <div className={ cx(styles.flexItem, styles.classes) }>
           <p>{ spell.classes.join(", ") }</p>
         </div>
-        <div className={ selected ? 'flex-item options active' : 'flex-item options' }
+        <div className={ cx(styles.flexItem, styles.options, { [active]: selected }) }
           onClick={(e) => {
             e.stopPropagation()
             onSpellbookClick(spell.id)

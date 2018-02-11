@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from '../../styles/spells'
+import { cx } from 'react-emotion'
 import SpellContainer from '../../containers/shared/SpellContainer'
 import Loading from './Loading'
 
@@ -23,16 +25,16 @@ const SpellsList = ({ spells, hasErrored, isLoading }) => {
   return (
     <div className="container">
       <div className="spells-list-headers flex-container">
-        <div className="flex-item name">
+        <div className={ cx(styles.flexItem, styles.name) }>
           <p>Name</p>
         </div>
-        <div className="flex-item level">
+        <div className={ cx(styles.flexItem, styles.level) }>
           <p>Level</p>
         </div>
-        <div className="flex-item school">
+        <div className={ cx(styles.flexItem, styles.school) }>
           <p>School</p>
         </div>
-        <div className="flex-item classes">
+        <div className={ cx(styles.flexItem, styles.classes) }>
           <p>Classes</p>
         </div>
       </div>

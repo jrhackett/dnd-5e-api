@@ -34,35 +34,6 @@
   flex-wrap: wrap;
 }
 
-.flex-item {
-  box-sizing: border-box;
-  width: 100%;
-  overflow: hidden;
-  list-style: none;
-  white-space: nowrap;
-}
-
-.flex-item p {
-  margin: 0;
-  width: 90%;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-}
-
-.flex-item.name { width: 26%; }
-
-.flex-item.level { width: 10%; }
-
-.flex-item.school { width: 17%; }
-
-.flex-item.classes { width: 45%; }
-
-.flex-item.options { 
-  width: 1%;
-  min-width: 15px;
-  text-align: right;
-}
-
 .spell-row {
   padding: 1.0rem 3rem;
   border-radius: 2px;
@@ -89,10 +60,7 @@
   display: none;    
 }
 
-.flex-item.options.active .fa.fa-book {
-  color: #6C57E6;
-}
-
+/* TODO add these media queries to new CSS-in-JS styles*/
 @media screen and (max-width: 960px) {
   .flex-item.school, .flex-item.classes, .flex-item.options, .number-of-spells {
     display: none;
