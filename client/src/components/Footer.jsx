@@ -15,7 +15,7 @@ const footerWrapper = css`
 
 const Footer = () => (
   <div className={ footerWrapper }>
-    <p>Spellslot &copy; Jacob Hackett</p>
+    <p>Spellslot &copy; Jacob Hackett, 2018</p>
     <p>Wizards of the Coast, Dungeons & Dragons, D&D, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. &copy; 2017 Wizards. All Rights Reserved. Spellslot is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.</p>
   </div>
 )
