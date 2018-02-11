@@ -6,7 +6,7 @@ const footerWrapper = css`
   flex-wrap: wrap;
   background: #6C57E6;
   padding: 10px 15px;
-  margin-top: 1rem;
+  margin-top: calc(20px + 2rem); 
 
   p {
     color: #fefefe;
