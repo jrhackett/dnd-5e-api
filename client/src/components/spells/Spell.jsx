@@ -46,13 +46,13 @@ class Spell extends Component {
         <div className={ cx(flex.flexItem, styles.level) }>
           <p>{ spell.level }</p>
         </div>
-        <div className={ cx(flex.flexItem, styles.school) }>
+        <div className={ cx(flex.flexItem, styles.school, styles.hideOnMobile) }>
           <p>{ spell.school }</p>
         </div>
-        <div className={ cx(flex.flexItem, styles.classes) }>
+        <div className={ cx(flex.flexItem, styles.classes, styles.hideOnMobile) }>
           <p>{ spell.classes.join(", ") }</p>
         </div>
-        <div className={ cx(flex.flexItem, styles.options, { [active]: selected }) }
+        <div className={ cx(flex.flexItem, styles.options, styles.hideOnMobile, { [active]: selected }) }
           onClick={(e) => {
             e.stopPropagation()
             onSpellbookClick(spell.id)

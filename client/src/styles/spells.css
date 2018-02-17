@@ -35,15 +35,7 @@
   display: none;    
 }
 
-/* TODO add these media queries to new CSS-in-JS styles*/
 @media screen and (max-width: 960px) {
-  .flex-item.school, .flex-item.classes, .flex-item.options, .number-of-spells {
-    display: none;
-  }
-
-  .flex-item.name { width: 88%; }
-
-  .flex-item.level { width: 12%; }
 
   .filter-links .filter-label {
     display: block;

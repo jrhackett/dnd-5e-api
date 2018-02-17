@@ -41,10 +41,10 @@ const SpellsList = ({ spells, hasErrored, isLoading }) => {
         <div className={ cx(flex.flexItem, styles.level) }>
           <p>Level</p>
         </div>
-        <div className={ cx(flex.flexItem, styles.school) }>
+        <div className={ cx(flex.flexItem, styles.school, styles.hideOnMobile) }>
           <p>School</p>
         </div>
-        <div className={ cx(flex.flexItem, styles.classes) }>
+        <div className={ cx(flex.flexItem, styles.classes, styles.hideOnMobile) }>
           <p>Classes</p>
         </div>
       </div>
