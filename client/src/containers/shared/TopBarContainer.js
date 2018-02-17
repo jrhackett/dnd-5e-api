@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
+import { getVisibleSpells } from '../../selectors/spells'
 import TopBar from '../../components/shared/TopBar'
 import { updateSearchTerm } from '../../actions/spells'
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
-  numberOfSpells: state.spells.spells.length,
+  numberOfSpells: getVisibleSpells(state).length,
   isLoading: state.spells.isLoading
 })
 
