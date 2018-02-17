@@ -8,7 +8,9 @@ import { Icon } from 'react-fa'
 import SpellDetails from './SpellDetails'
 
 const active = css`
-  color: ${ colors.purple };
+  span {
+    color: ${ colors.purple };
+  }
 `
 
 const row = css`
