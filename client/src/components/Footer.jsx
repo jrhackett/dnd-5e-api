@@ -5,11 +5,14 @@ const footerWrapper = css`
   display: flex;
   flex-wrap: wrap;
   background: #6C57E6;
-  padding: 10px 15px;
+  padding: 1rem 2rem;
   margin-top: calc(20px + 2rem); 
 
   p {
     color: #fefefe;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    flex-basis: 100%;
   }
 `
 

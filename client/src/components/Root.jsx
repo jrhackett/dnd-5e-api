@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Provider, connect } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { css } from 'react-emotion'
 import Navigation from './Navigation'
 import RootSpells from './Spells'
 import RootSpellbook from './Spellbook'
@@ -10,6 +11,10 @@ import { spellsFetchData } from '../actions/spells'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/app.css'
+
+const content = css`
+  min-height: calc(100vh - 2rem - 20px - 13.7rem)
+`
 
 class Root extends Component {
   componentDidMount() {
@@ -24,11 +29,13 @@ class Root extends Component {
           <BrowserRouter>
             <div>
               <Navigation />
-              <Switch>
-                <Route path="/spellbook" component={ RootSpellbook } />
-                <Route path="/profile" component={ RootProfile } />
-                <Route path="/" component={ RootSpells } />
-              </Switch>
+              <div className={ content }>
+                <Switch>
+                  <Route path="/spellbook" component={ RootSpellbook } />
+                  <Route path="/profile" component={ RootProfile } />
+                  <Route path="/" component={ RootSpells } />
+                </Switch>
+              </div>
               <Footer />
             </div>
           </BrowserRouter>
