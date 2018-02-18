@@ -20,21 +20,11 @@ a:hover {
 
 .btn-filter {
   padding: 3px 8px;
-  margin-top: -1px;
-}
-
-.filters, .filter-links {
-  margin-bottom: 1rem;
 }
 
 .filter-links .btn {
   margin-right: 0.5rem;
   border-radius: 2px;
-}
-
-.filter-label {
-  display: inline-block;
-  width: 7rem;
 }
 
 span.active a.btn {

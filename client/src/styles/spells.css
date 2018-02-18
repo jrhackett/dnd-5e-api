@@ -1,66 +1,9 @@
-.spells-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.spells-header-left, .spells-header-right {
-  width: 50%;
-}
-
-.spells-header-right {
-  text-align: right;
-  margin: 3rem 0;
-}
-
-.spells-header h1 {
-  margin: 2rem 2rem 3rem 0;
-  display: inline-block;
-}
-
-.flex-item.details p {
-  overflow-x: initial;
-  white-space: initial;
-  margin-bottom: 0.25rem;
-}
-
-.flex-item.details {
-  margin-top: 1rem;
-}
-
-.detail-label {
-  font-weight: 700;
-}
-
-.extra {
-  display: none;    
-}
-
 @media screen and (max-width: 960px) {
-
   .filter-links .filter-label {
     display: block;
   }
 
   .filter-links .btn {
     margin-bottom: 0.5rem;
-  }
-
-  .extra {
-    display: block;
-  }
-
-  .spells-header {
-    margin-bottom: 5rem;
-  }
-
-  .spells-header .search {
-    top: 2rem;
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .spells-header-left, .spells-header-right {
-    width: auto;
   }
 }

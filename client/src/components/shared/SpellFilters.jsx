@@ -1,29 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { css, cx } from 'react-emotion'
 import SpellFilterLevelContainer from '../../containers/shared/filters/SpellFilterLevelContainer'
 import SpellFilterSchoolContainer from '../../containers/shared/filters/SpellFilterSchoolContainer'
 import SpellFilterClassContainer from '../../containers/shared/filters/SpellFilterClassContainer'
 
+const filters = css`
+  margin-bottom: 1rem;
+`
+
+const filterLinks = css`
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+`
+
+const filterLabel = css`
+  display: inline-block;
+  width: 7rem;
+
+  @media screen and (max-width: 960px) {
+    display: block;
+  }
+`
+
 const SpellFilters = ({ shouldShow, levels, schools, classes, onFilterClear }) => {
   if(shouldShow) {
     return (
-      <div className="container filters">
-        <div className="filter-links">
-          <span className="filter-label">Level: </span>
+      <div className={ cx('container', filters) }>
+        <div className={ filterLinks }>
+          <span className={ filterLabel }>Level: </span>
           <SpellFilterLevelContainer text='All' />
           {levels.map(level => {
             return <SpellFilterLevelContainer key={level} text={level} />
           })}
         </div>
-        <div className="filter-links">
-          <span className="filter-label">School: </span>
+        <div className={ filterLinks }>
+          <span className={ filterLabel }>School: </span>
           <SpellFilterSchoolContainer text='All' />
           {schools.map(school => {
             return <SpellFilterSchoolContainer key={school} text={school} />
           })}
         </div>
-        <div className="filter-links">
-          <span className="filter-label">Class: </span>
+        <div className={ filterLinks }>
+          <span className={ filterLabel }>Class: </span>
           <SpellFilterClassContainer text='All' />
           {classes.map(className => {
             return <SpellFilterClassContainer key={className} className={className} text={className} />

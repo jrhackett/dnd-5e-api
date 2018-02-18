@@ -5,7 +5,6 @@ import { css } from 'react-emotion'
 import Navigation from './Navigation'
 import RootSpells from './Spells'
 import RootSpellbook from './Spellbook'
-import RootProfile from './Profile'
 import Footer from './Footer'
 import { spellsFetchData } from '../actions/spells'
 
@@ -32,7 +31,6 @@ class Root extends Component {
               <div className={ content }>
                 <Switch>
                   <Route path="/spellbook" component={ RootSpellbook } />
-                  <Route path="/profile" component={ RootProfile } />
                   <Route path="/" component={ RootSpells } />
                 </Switch>
               </div>

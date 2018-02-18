@@ -1,8 +1,29 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { css, cx } from 'react-emotion'
 import { Icon } from 'react-fa'
 import SpellFiltersContainer from '../../containers/shared/filters/SpellFiltersContainer'
 import SearchBar from './SearchBar'
+
+const header = css`
+  display: flex;
+  justify-content: flex-start;
+`
+
+const headerSection = css`
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+`
+
+const numberOfSpellsStyle = css`
+  margin: 0 1rem;
+`
+
+const rightSection = css`
+  margin: 3rem 0 3rem auto;
+  justify-content: flex-end;
+`
 
 class SpellsTopBar extends Component {
   constructor(props) {
@@ -25,13 +46,13 @@ class SpellsTopBar extends Component {
 
     return (
       <div>
-        <div className="container spells-header">
-          <div className="spells-header-left">
+        <div className={ cx('container', header) }>
+          <div className={ headerSection }>
             <h1>{ title }</h1>
-            <span className="number-of-spells">{ numberOfSpells } total</span>
+            <span className={ numberOfSpellsStyle }>{ numberOfSpells } total</span>
             {/*<a href="/api/v1/spells/export" download>Export</a>*/}
           </div>
-          <div className="spells-header-right">
+          <div className={ cx(headerSection, rightSection) }>
             <SearchBar onTermChange={ onSearchChange } />
             <a className="btn btn-default btn-filter" onClick={e => {
                 e.preventDefault()
