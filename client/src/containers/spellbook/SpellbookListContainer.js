@@ -1,13 +1,9 @@
 import { connect } from 'react-redux'
 import SpellsList from '../../components/shared/SpellsList'
-import { getVisibleSpells } from '../../selectors/spells'
-
-const getSpellbookSpells = (spells, state) => {
-  return spells.filter(s => state.spellbook.selected.includes(s.id))
-}
+import { getVisibleSpellbookSpells } from '../../selectors/spells'
 
 const mapStateToProps = state => ({
-  spells: getSpellbookSpells(getVisibleSpells(state), state),
+  spells: getVisibleSpellbookSpells(state),
   hasErrored: state.spells.hasErrored,
   isLoading: state.spells.isLoading
 })
