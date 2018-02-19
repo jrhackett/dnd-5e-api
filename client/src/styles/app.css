@@ -6,31 +6,6 @@ p, h1, h2, h3, h4, h5, h6, span {
   color: #333;
 }
 
-a {
-  color: #9C9DE3;
-}
-
-a:hover {
-  color: #7E69FA;
-}
-
-.btn {
-  border-radius: 2px;
-}
-
-.btn-filter {
-  padding: 3px 8px;
-}
-
-.filter-links .btn {
-  margin-right: 0.5rem;
-  border-radius: 2px;
-}
-
-span.active a.btn {
-  border-color: #7E69FA;
-}
-
 .navbar {
   position: relative;
   height: 3.5rem;

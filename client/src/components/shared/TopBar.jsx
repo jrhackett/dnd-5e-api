@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { css, cx } from 'react-emotion'
 import { Icon } from 'react-fa'
+import buttonStyles from '../../styles/button'
 import SpellFiltersContainer from '../../containers/shared/filters/SpellFiltersContainer'
 import SearchBar from './SearchBar'
 
@@ -54,7 +55,7 @@ class SpellsTopBar extends Component {
           </div>
           <div className={ cx(headerSection, rightSection) }>
             <SearchBar onTermChange={ onSearchChange } />
-            <a className="btn btn-default btn-filter" onClick={e => {
+            <a className={ cx(buttonStyles.btn, buttonStyles.default) } onClick={e => {
                 e.preventDefault()
                 this.toggleFilters()
               }}
