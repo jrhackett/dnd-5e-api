@@ -17,7 +17,6 @@ class SpellEngine {
     Spell.find(query).sort('name').exec(function(err, spells) {
       if(err)
         res.status(500).send(err)
-      // hacky hack to get the CSV conversion to work properly
       const spellsObj = JSON.parse(JSON.stringify(spells))
       res.status(200).csv(spellsObj)
     })
