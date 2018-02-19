@@ -1,9 +1,0 @@
-@media screen and (max-width: 960px) {
-  .filter-links .filter-label {
-    display: block;
-  }
-
-  .filter-links .btn {
-    margin-bottom: 0.5rem;
-  }
-}
