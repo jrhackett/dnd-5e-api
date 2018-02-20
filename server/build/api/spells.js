@@ -37,7 +37,6 @@ var SpellEngine = function SpellEngine() {
     var query = _this._getQuery(req.query);
     _spell2.default.find(query).sort('name').exec(function (err, spells) {
       if (err) res.status(500).send(err);
-      // hacky hack to get the CSV conversion to work properly
       var spellsObj = JSON.parse(JSON.stringify(spells));
       res.status(200).csv(spellsObj);
     });
