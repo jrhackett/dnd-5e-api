@@ -65,3 +65,9 @@ export const updateSearchTerm = (searchTerm) => ({
   type: types.UPDATE_SPELL_SEARCH_TERM,
   searchTerm
 })
+
+export const updateSpellsSort = (key, order) => ({
+  type: types.UPDATE_SPELLS_SORT,
+  key,
+  order
+})

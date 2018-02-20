@@ -8,7 +8,9 @@ const initialState = {
   filterSchool: [],
   filterClass: [],
   showDetails: [],
-  searchTerm: ''
+  searchTerm: '',
+  sortOrder: 'asc',
+  sortKey: 'name'
 }
 
 const spells = (state = initialState, action) => {
@@ -89,6 +91,12 @@ const spells = (state = initialState, action) => {
       return {
         ...state,
         searchTerm: action.searchTerm
+      }
+    case types.UPDATE_SPELLS_SORT:
+      return {
+        ...state,
+        sortKey: action.key,
+        sortOrder: action.order
       }
     default:
       return state
