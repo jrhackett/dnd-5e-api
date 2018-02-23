@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css, cx } from 'react-emotion'
+import colors from '../../styles/colors'
 import SpellFilterLevelContainer from '../../containers/shared/filters/SpellFilterLevelContainer'
 import SpellFilterSchoolContainer from '../../containers/shared/filters/SpellFilterSchoolContainer'
 import SpellFilterClassContainer from '../../containers/shared/filters/SpellFilterClassContainer'
@@ -20,6 +21,15 @@ const filterLabel = css`
 
   @media screen and (max-width: 960px) {
     display: block;
+  }
+`
+
+const clearFilters = css`
+  color: ${ colors.lightPurple };
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: none;
   }
 `
 
@@ -53,6 +63,7 @@ const SpellFilters = ({ shouldShow, levels, schools, classes, onFilterClear }) =
               e.preventDefault()
               onFilterClear()
             }}
+            className={ clearFilters }
           >
             Clear Filters
           </a>

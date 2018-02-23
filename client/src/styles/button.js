@@ -5,9 +5,9 @@ const styles = {
   btn: css`
     border-radius: 2px;
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     margin-bottom: 0;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 400;
     line-height: 1;
     text-align: center;
