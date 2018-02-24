@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker'
 import { loadState, saveState } from './localStorage'
 import throttle from 'lodash/throttle'
 
-const store = configureStore(loadState()) // You can also pass in an initialState here
+const store = configureStore(loadState())
 
 store.subscribe(throttle(() => {
   saveState({
