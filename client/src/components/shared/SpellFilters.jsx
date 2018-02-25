@@ -55,7 +55,7 @@ const SpellFilters = ({ shouldShow, levels, schools, classes, onFilterClear }) =
           <span className={ filterLabel }>Class: </span>
           <SpellFilterClassContainer text='All' />
           {classes.map(className => {
-            return <SpellFilterClassContainer key={className} className={className} text={className} />
+            return <SpellFilterClassContainer key={ className } className={ className } text={ className } />
           })}
         </div>
         <div>

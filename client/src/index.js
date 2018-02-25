@@ -15,7 +15,7 @@ store.subscribe(throttle(() => {
 }, 1000))
 
 render(
-  <Root store={store} />,
+  <Root store={ store } />,
   document.getElementById('root')
 )
 

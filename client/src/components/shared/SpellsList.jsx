@@ -25,7 +25,7 @@ const SpellsList = ({ spells, hasErrored, isLoading }) => {
     <div className="container">
       <SpellsSortableHeaderContainer />
       {spells.map((spell) => (
-        <SpellContainer key={spell.id} spell={spell} />
+        <SpellContainer key={ spell.id } spell={ spell } />
       ))}
     </div>
   )
