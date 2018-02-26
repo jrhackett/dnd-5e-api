@@ -10,6 +10,7 @@ access.log
 
 .DS_Store
 
+.env
 env.json
 .env.local
 .env.development.local
@@ -17,3 +18,4 @@ env.json
 .env.production.local
 
 vendor/
+pkg/

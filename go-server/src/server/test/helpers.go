@@ -1,4 +1,4 @@
-package main_test
+package test
 
 import (
   "net/http"
@@ -7,17 +7,6 @@ import (
 
   "go-rest-api-example/api"
 )
-
-func TestIndex(t *testing.T) {
-  req, _ := http.NewRequest("GET", "/", nil)
-  response := executeRequest(req)
-
-  checkResponseCode(t, http.StatusOK, response.Code)
-
-  if body := response.Body.String(); body != "Hello" {
-    t.Errorf("Expected \"Hello\". Got %s", body)
-  }
-}
 
 func executeRequest(req *http.Request) *httptest.ResponseRecorder {
   rr := httptest.NewRecorder()
