@@ -5,8 +5,8 @@ import (
   "testing"
 )
 
-func TestIndex(t *testing.T) {
-  req, _ := http.NewRequest("GET", "/", nil)
+func TestSimpleGet(t *testing.T) {
+  req, _ := http.NewRequest("GET", "/spells", nil)
   response := executeRequest(req)
 
   checkResponseCode(t, http.StatusOK, response.Code)

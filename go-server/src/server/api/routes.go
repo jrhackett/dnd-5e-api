@@ -15,20 +15,11 @@ type Route struct {
 
 type Routes []Route
 
-func NewRouter() *mux.Router {
+func NewRouter(context Context) *mux.Router {
   router := mux.NewRouter().StrictSlash(true)
-  for _, route := range routes {
-    router.Methods(route.method).Path(route.pattern).Name(route.name).Handler(route.handler)
-  }
+
+  router.Methods("GET").Path("/").Name("Index").Handler(context.Index)
+  router.Methods("GET").Path("/spells").Name("Get Spells").Handler(context.GetSpells)
 
   return router
-}
-
-var routes = Routes{
-  Route{
-    "index",
-    "GET",
-    "/",
-    Index,
-  },
 }

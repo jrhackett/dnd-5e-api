@@ -14,6 +14,6 @@ func main() {
     log.Fatalf("Error loading .env file: %v", err)
   }
 
-  router := api.NewRouter()
+  router := api.NewRouter(api.Context{})
   log.Fatal(http.ListenAndServe(":8080", router))
 }
