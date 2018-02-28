@@ -5,7 +5,7 @@ import (
   "net/http"
 
   "github.com/alexsasharegan/dotenv"
-  "go-rest-api-example/api"
+  "server/api"
 )
 
 func main() {
