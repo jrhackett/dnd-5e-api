@@ -5,12 +5,12 @@ import (
   "net/http/httptest"
   "testing"
 
-  "go-rest-api-example/api"
+  "server/api"
 )
 
 func executeRequest(req *http.Request) *httptest.ResponseRecorder {
   rr := httptest.NewRecorder()
-  api.NewRouter().ServeHTTP(rr, req)
+  api.NewRouter(api.Context{}).ServeHTTP(rr, req)
 
   return rr
 }
