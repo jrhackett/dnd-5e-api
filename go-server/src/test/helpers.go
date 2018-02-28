@@ -5,7 +5,7 @@ import (
   "net/http/httptest"
   "testing"
 
-  "server/api"
+  "api"
 )
 
 func executeRequest(req *http.Request) *httptest.ResponseRecorder {

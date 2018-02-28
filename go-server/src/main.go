@@ -4,8 +4,8 @@ import (
   "log"
   "net/http"
 
+  "api"
   "github.com/alexsasharegan/dotenv"
-  "server/api"
 )
 
 func main() {
