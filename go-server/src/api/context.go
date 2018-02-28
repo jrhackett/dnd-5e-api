@@ -1,3 +1,7 @@
 package api
 
-type Context struct{}
+import "api/connections"
+
+type Context struct {
+  DB connections.DatabaseConnection
+}

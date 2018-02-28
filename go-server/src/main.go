@@ -5,6 +5,7 @@ import (
   "net/http"
 
   "api"
+  "api/connections"
   "github.com/alexsasharegan/dotenv"
 )
 
@@ -14,6 +15,7 @@ func main() {
     log.Fatalf("Error loading .env file: %v", err)
   }
 
-  router := api.NewRouter(api.Context{})
-  log.Fatal(http.ListenAndServe(":8080", router))
+  log.Fatal(http.ListenAndServe(":8080", api.NewRouter(api.Context{
+    DB: connections.MockDBConnection{},
+  })))
 }
