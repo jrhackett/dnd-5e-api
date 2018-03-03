@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"net/http"
 	"os"
 
@@ -18,11 +17,9 @@ func authHandler(next http.Handler) http.Handler {
 		configuration := auth0.NewConfiguration(secretProvider, audience, os.Getenv("AUTH_ISSUER"), jose.HS256)
 		validator := auth0.NewValidator(configuration)
 
-		token, err := validator.ValidateRequest(r)
+		_, err := validator.ValidateRequest(r)
 
 		if err != nil {
-			fmt.Println(err)
-			fmt.Println("Token is not valid:", token)
 			w.WriteHeader(http.StatusUnauthorized)
 			w.Write([]byte("Unauthorized"))
 		} else {
