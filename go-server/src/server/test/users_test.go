@@ -7,7 +7,7 @@ import (
 
 func TestSimpleGetUserWithoutAuth(t *testing.T) {
 	req, _ := http.NewRequest("GET", "/user", nil)
-	response := executeRequest(req)
+	response := executeRequest(req, SimpleContext)
 
 	checkResponseCode(t, http.StatusUnauthorized, response.Code)
 }

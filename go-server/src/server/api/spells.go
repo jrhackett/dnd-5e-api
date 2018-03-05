@@ -1,11 +1,14 @@
 package api
 
 import (
-	"fmt"
+	"encoding/json"
 	"net/http"
 )
 
 // GetSpells returns spells that match query params
 func (context Context) GetSpells(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Not yet implemented")
+	spells := context.DB.GetSpells()
+	payload, _ := json.Marshal(spells)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte(payload))
 }

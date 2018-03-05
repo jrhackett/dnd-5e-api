@@ -8,9 +8,9 @@ import (
 	"server/api"
 )
 
-func executeRequest(req *http.Request) *httptest.ResponseRecorder {
+func executeRequest(req *http.Request, context api.Context) *httptest.ResponseRecorder {
 	rr := httptest.NewRecorder()
-	api.NewRouter(api.Context{}).ServeHTTP(rr, req)
+	api.NewRouter(context).ServeHTTP(rr, req)
 
 	return rr
 }
@@ -18,5 +18,11 @@ func executeRequest(req *http.Request) *httptest.ResponseRecorder {
 func checkResponseCode(t *testing.T, expected, actual int) {
 	if expected != actual {
 		t.Errorf("Expected response code %d. Got %d\n", expected, actual)
+	}
+}
+
+func assertEqual(t *testing.T, a interface{}, b interface{}) {
+	if a != b {
+		t.Fatalf("%s != %s", a, b)
 	}
 }
