@@ -8,6 +8,7 @@ import (
 	jose "gopkg.in/square/go-jose.v2"
 )
 
+// authHandler is middleware for authorizing a user before the route
 func authHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		secret := []byte(os.Getenv("AUTH_SECRET"))
