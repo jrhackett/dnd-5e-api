@@ -4,11 +4,24 @@ import (
 	"server/models"
 )
 
+type SpellDAOVersion int
+
+const (
+	RealDB SpellDAOVersion = iota
+	MockDB
+)
+
 // SpellDAO persists artist data in database
 type SpellDAO struct{}
 
 // NewSpellDAO creates a new SpellDAO
-func NewSpellDAO() *SpellDAO {
+func NewSpellDAO(version SpellDAOVersion) *SpellDAO {
+	switch version {
+	case RealDB:
+		return &SpellDAO{} // TODO change this to real DB connection
+	case MockDB:
+		return &SpellDAO{}
+	}
 	return &SpellDAO{}
 }
 
