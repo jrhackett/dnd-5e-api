@@ -4,15 +4,20 @@ import (
 	"server/models"
 )
 
-type SpellDAOVersion int
+type (
+	// SpellDAOVersion is an enum used when creating a new dao through the factory
+	SpellDAOVersion int
 
-const (
-	RealDB SpellDAOVersion = iota
-	MockDB
+	// SpellDAO persists artist data in database
+	SpellDAO struct{}
 )
 
-// SpellDAO persists artist data in database
-type SpellDAO struct{}
+const (
+	// RealDB describes a connection to a real DB
+	RealDB SpellDAOVersion = iota
+	// MockDB describes a connection to a mock DB
+	MockDB
+)
 
 // NewSpellDAO creates a new SpellDAO
 func NewSpellDAO(version SpellDAOVersion) *SpellDAO {
@@ -25,6 +30,7 @@ func NewSpellDAO(version SpellDAOVersion) *SpellDAO {
 	return &SpellDAO{}
 }
 
+// Get for SpellDAO
 func (dao *SpellDAO) Get(id int) (*models.Spell, error) {
 	return &models.Spell{}, nil
 }
