@@ -1,16 +1,14 @@
-package test
+package api
 
 import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-
-	"server/api"
 )
 
-func executeRequest(req *http.Request, context api.Context) *httptest.ResponseRecorder {
+func executeRequest(req *http.Request, context Context) *httptest.ResponseRecorder {
 	rr := httptest.NewRecorder()
-	api.NewRouter(context).ServeHTTP(rr, req)
+	NewRouter(context).ServeHTTP(rr, req)
 
 	return rr
 }
