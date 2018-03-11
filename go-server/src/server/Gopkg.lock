@@ -8,18 +8,6 @@
   revision = "090a4d1b5d42ce7c3577c42f282b55fc45d5eab1"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/auth0-community/auth0"
-  packages = ["."]
-  revision = "9ebd072c579e8060c6d60690e9dffd3b79718992"
-
-[[projects]]
-  name = "github.com/go-errors/errors"
-  packages = ["."]
-  revision = "3afebba5a48dbc89b574d890b6b34d9ee10b4785"
-  version = "v1.0.0"
-
-[[projects]]
   name = "github.com/gorilla/context"
   packages = ["."]
   revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
@@ -31,29 +19,9 @@
   revision = "53c1911da2b537f792e7cafcb446b05ffe33b996"
   version = "v1.6.1"
 
-[[projects]]
-  branch = "master"
-  name = "golang.org/x/crypto"
-  packages = [
-    "ed25519",
-    "ed25519/internal/edwards25519"
-  ]
-  revision = "91a49db82a88618983a78a06c1cbd4e00ab749ab"
-
-[[projects]]
-  name = "gopkg.in/square/go-jose.v2"
-  packages = [
-    ".",
-    "cipher",
-    "json",
-    "jwt"
-  ]
-  revision = "6ee92191fea850cdcab9a18867abf5f521cdbadb"
-  version = "v2.1.4"
-
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "84f2be6915af0f8a07b6f17ae1b21e29181a8d37838c10851557d83aa964db9b"
+  inputs-digest = "971e76aa8500765392b9f19d40f7e2f5380533aeb570e1b94a2d805a4c10d9cf"
   solver-name = "gps-cdcl"
   solver-version = 1
