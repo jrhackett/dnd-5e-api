@@ -3,11 +3,12 @@ package main
 import (
 	"log"
 	"net/http"
-
-	"server/api"
-	"server/api/connections"
+	"server/apis"
+	"server/daos"
+	"server/services"
 
 	"github.com/alexsasharegan/dotenv"
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -16,7 +17,9 @@ func main() {
 		log.Fatalf("Error loading .env file: %v", err)
 	}
 
-	log.Fatal(http.ListenAndServe(":8080", api.NewRouter(api.Context{
-		DB: connections.MockDBConnection{},
-	})))
+	router := mux.NewRouter().StrictSlash(true)
+
+	apis.ServeSpellResource(router, *services.NewSpellService(daos.NewSpellDAO()))
+
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
