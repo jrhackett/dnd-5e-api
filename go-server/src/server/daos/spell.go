@@ -1,7 +1,6 @@
 package daos
 
 import (
-	"server/app"
 	"server/models"
 )
 
@@ -13,6 +12,6 @@ func NewSpellDAO() *SpellDAO {
 	return &SpellDAO{}
 }
 
-func (dao *SpellDAO) Get(rs app.RequestScope, id int) (*models.Spell, error) {
+func (dao *SpellDAO) Get(id int) (*models.Spell, error) {
 	return &models.Spell{}, nil
 }

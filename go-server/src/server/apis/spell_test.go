@@ -11,5 +11,5 @@ func TestSimpleGetSpells(t *testing.T) {
 
 	checkResponseCode(t, http.StatusOK, response.Code)
 
-	assertEqual(t, response.Body.String(), "[]")
+	assertEqual(t, response.Body.String(), "{\"name\":\"\"}")
 }

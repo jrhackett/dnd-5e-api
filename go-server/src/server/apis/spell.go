@@ -3,8 +3,8 @@ package apis
 import (
 	"encoding/json"
 	"net/http"
-	"server/app"
 	"server/models"
+	"strconv"
 
 	"github.com/gorilla/mux"
 )
@@ -12,7 +12,7 @@ import (
 type (
 	// spellService specifies the interface for the spell service needed by spellResource.
 	spellService interface {
-		Get(rs app.RequestScope, id int) (*models.Spell, error)
+		Get(id int) (*models.Spell, error)
 	}
 
 	// spellResource defines the handlers for the CRUD APIs.
@@ -28,8 +28,8 @@ func ServeSpellResource(router *mux.Router, service spellService) {
 }
 
 func (s *spellResource) get(w http.ResponseWriter, r *http.Request) {
-	// TODO replace with some context
-	spells := models.Spells{}
+	id, _ := strconv.ParseInt(r.URL.Query().Get("id"), 10, 0)
+	spells, _ := s.service.Get(int(id))
 	payload, _ := json.Marshal(spells)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write([]byte(payload))
