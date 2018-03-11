@@ -14,6 +14,7 @@ func NewRouter(context Context) *mux.Router {
 	router.Methods("GET").Path("/").Name("Index").HandlerFunc(context.Index)
 
 	router.Methods("GET").Path("/spells").Name("Get Spells").HandlerFunc(context.GetSpells)
+	router.Methods("GET").Path("/spellbooks").Name("Get Spellbooks").HandlerFunc(context.GetSpellbooks)
 	router.Methods("GET").Path("/user").Name("Get User").Handler(authHandler(http.HandlerFunc(context.GetUser)))
 
 	return router
