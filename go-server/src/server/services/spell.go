@@ -21,5 +21,5 @@ func NewSpellService(dao spellDAO) *SpellService {
 }
 
 func (s SpellService) Get(id int) (*models.Spell, error) {
-	return &models.Spell{}, nil
+	return s.dao.Get(id)
 }
