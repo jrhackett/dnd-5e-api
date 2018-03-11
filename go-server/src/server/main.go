@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"server/apis"
 	"server/daos"
 	"server/services"
@@ -21,5 +23,5 @@ func main() {
 
 	apis.ServeSpellResource(router, *services.NewSpellService(daos.NewSpellDAO()))
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Getenv("PORT")), router))
 }
