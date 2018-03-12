@@ -1,20 +1,17 @@
 package services
 
-import "server/models"
+import (
+	"server/daos"
+	"server/models"
+)
 
 type (
-	// spellDAO specifies the interface of the spell DAO needed by SpellService.
-	spellDAO interface {
-		// Get returns the spell with the specified spell ID.
-		Get(id int) (*models.Spell, error)
-	}
-
 	// SpellService provides services related with spells.
-	SpellService struct{ dao spellDAO }
+	SpellService struct{ dao daos.SpellDAO }
 )
 
 // NewSpellService creates a new SpellService with the given spell DAO.
-func NewSpellService(dao spellDAO) *SpellService {
+func NewSpellService(dao daos.SpellDAO) *SpellService {
 	return &SpellService{dao}
 }
 
