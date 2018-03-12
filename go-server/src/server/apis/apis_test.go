@@ -13,7 +13,8 @@ import (
 func executeRequest(req *http.Request) *httptest.ResponseRecorder {
 	rr := httptest.NewRecorder()
 	router := mux.NewRouter().StrictSlash(true)
-	ServeSpellResource(router, *services.NewSpellService(daos.NewSpellDAO(daos.MockDB)))
+	spellDao, _ := daos.NewSpellDAO(daos.MockDB)
+	ServeSpellResource(router, *services.NewSpellService(spellDao))
 	router.ServeHTTP(rr, req)
 
 	return rr

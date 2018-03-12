@@ -21,7 +21,9 @@ func main() {
 
 	router := mux.NewRouter().StrictSlash(true)
 
-	apis.ServeSpellResource(router, *services.NewSpellService(daos.NewSpellDAO(daos.MockDB)))
+	spellDao, _ := daos.NewSpellDAO(daos.MockDB)
+
+	apis.ServeSpellResource(router, *services.NewSpellService(spellDao))
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Getenv("PORT")), router))
 }
