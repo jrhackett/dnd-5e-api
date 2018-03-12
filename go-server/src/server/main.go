@@ -23,7 +23,7 @@ func main() {
 
 	spellDao, _ := daos.NewSpellDAO(daos.MockDB)
 
-	apis.ServeSpellResource(router, *services.NewSpellService(spellDao))
+	apis.ServeSpellResource(router, services.NewSpellService(spellDao))
 
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v", os.Getenv("PORT")), router))
 }

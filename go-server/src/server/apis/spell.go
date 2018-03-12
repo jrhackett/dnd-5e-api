@@ -3,26 +3,21 @@ package apis
 import (
 	"encoding/json"
 	"net/http"
-	"server/models"
+	"server/services"
 	"strconv"
 
 	"github.com/gorilla/mux"
 )
 
 type (
-	// spellService specifies the interface for the spell service needed by spellResource.
-	spellService interface {
-		Get(id int) (*models.Spell, error)
-	}
-
 	// spellResource defines the handlers for the CRUD APIs.
 	spellResource struct {
-		service spellService
+		service services.SpellService
 	}
 )
 
 // ServeSpellResource sets up routes for the spell service
-func ServeSpellResource(router *mux.Router, service spellService) {
+func ServeSpellResource(router *mux.Router, service services.SpellService) {
 	r := &spellResource{service}
 	router.Methods("GET").Path("/spells").Name("Get Spell").HandlerFunc(r.get)
 }
