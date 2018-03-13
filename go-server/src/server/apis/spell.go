@@ -20,6 +20,9 @@ type (
 func ServeSpellResource(router *mux.Router, service services.SpellService) {
 	r := &spellResource{service}
 	router.Methods("GET").Path("/spells").Name("Get Spell").HandlerFunc(r.get)
+	router.Methods("POST").Path("/spells").Name("Post Spell").HandlerFunc(r.post)
+	router.Methods("PUT").Path("/spells").Name("Put Spell").HandlerFunc(r.put)
+	router.Methods("DELETE").Path("/spells").Name("Delete Spell").HandlerFunc(r.delete)
 }
 
 func (s *spellResource) get(w http.ResponseWriter, r *http.Request) {
@@ -28,4 +31,19 @@ func (s *spellResource) get(w http.ResponseWriter, r *http.Request) {
 	payload, _ := json.Marshal(spells)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write([]byte(payload))
+}
+
+func (s *spellResource) post(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte("Not yet implemented"))
+}
+
+func (s *spellResource) put(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte("Not yet implemented"))
+}
+
+func (s *spellResource) delete(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte("Not yet implemented"))
 }
