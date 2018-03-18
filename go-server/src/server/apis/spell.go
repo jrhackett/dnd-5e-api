@@ -29,21 +29,17 @@ func (s *spellResource) get(w http.ResponseWriter, r *http.Request) {
 	id, _ := strconv.ParseInt(r.URL.Query().Get("id"), 10, 0)
 	spells, _ := s.service.Get(int(id))
 	payload, _ := json.Marshal(spells)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte(payload))
+	sendResponse(w, "application/json", payload)
 }
 
 func (s *spellResource) post(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte("Not yet implemented"))
+	sendResponse(w, "application/json", []byte("Not yet implemented"))
 }
 
 func (s *spellResource) put(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte("Not yet implemented"))
+	sendResponse(w, "application/json", []byte("Not yet implemented"))
 }
 
 func (s *spellResource) delete(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Write([]byte("Not yet implemented"))
+	sendResponse(w, "application/json", []byte("Not yet implemented"))
 }
