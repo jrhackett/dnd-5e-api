@@ -22,4 +22,4 @@ The main entrypoint for the server is `main.go`.
 
 * To test: `go test ./...`
 * To build: `go build -o main`
-** To run: `./main` 
+* To run: `./main` 
