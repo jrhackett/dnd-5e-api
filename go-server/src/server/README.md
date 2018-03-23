@@ -19,7 +19,9 @@ The main entrypoint for the server is `main.go`.
 1. Clone the project and make sure your `$GOPATH` is set up properly. 
 2. You'll need to create a `.env` file in the `server` folder to hold some important information.
 ** This only includes `PORT` right now but will be extended soon to hold information about database connections and auth.
+3. You'll also need to install Golang dep and postgres.
+4. Create a database called `spells` and run `psql -d spells -U <username> -f db/create_db.sql`
 
 * To test: `go test ./...`
 * To build: `go build -o main`
-* To run: `./main` 
+* To run: `./main`
