@@ -7,8 +7,6 @@ import (
 	"net/url"
 	"os"
 	"server/models"
-
-	_ "github.com/lib/pq"
 )
 
 type (
