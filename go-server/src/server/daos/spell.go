@@ -1,8 +1,14 @@
 package daos
 
 import (
+	"database/sql"
 	"errors"
+	"fmt"
+	"log"
+	"os"
 	"server/models"
+
+	_ "github.com/lib/pq"
 )
 
 type (
@@ -11,7 +17,7 @@ type (
 
 	// SpellDAO describes a spell dao
 	SpellDAO interface {
-		Get(id int) (*models.Spell, error)
+		Get(id int) (*models.Spells, error)
 	}
 
 	// DBSpellDAO persists spell data in database
@@ -41,11 +47,36 @@ func NewSpellDAO(version SpellDAOVersion) (SpellDAO, error) {
 
 // Get for DBSpellDAO
 // TODO change this to real DB connection
-func (dao *DBSpellDAO) Get(id int) (*models.Spell, error) {
-	return &models.Spell{}, nil
+func (dao *DBSpellDAO) Get(id int) (*models.Spells, error) {
+	spells := models.Spells{}
+	db, err := sql.Open("postgres", os.Getenv("DATABASE_CONNECTION_STRING"))
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	rows, err := db.Query("SELECT * FROM spells;")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var spell models.Spell
+		if err := rows.Scan(&spell.ID, &spell.Name, &spell.School, &spell.Level, &spell.Ritual, &spell.CastingTime, &spell.Source, &spell.Range, &spell.Classes, &spell.Components, &spell.Duration, &spell.AtHigherLevel, &spell.Concentration, &spell.Slug, &spell.Page, &spell.Description); err != nil {
+			log.Fatal(err)
+		}
+		spells = append(spells, spell)
+	}
+	if err := rows.Err(); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("%+v\n", spells[0])
+
+	return &spells, nil
 }
 
 // Get for MockSpellDAO
-func (dao *MockSpellDAO) Get(id int) (*models.Spell, error) {
-	return &models.Spell{}, nil
+func (dao *MockSpellDAO) Get(id int) (*models.Spells, error) {
+	return &models.Spells{}, nil
 }

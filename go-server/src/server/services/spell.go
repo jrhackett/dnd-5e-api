@@ -6,12 +6,12 @@ import (
 )
 
 type (
-	// spellService specifies the interface for the spell service needed by spellResource.
+	// SpellService specifies the interface for the spell service needed by spellResource.
 	SpellService interface {
-		Get(id int) (*models.Spell, error)
+		Get(id int) (*models.Spells, error)
 	}
 
-	// SpellService provides services related with spells.
+	// SpellServiceImpl provides services related with spells.
 	SpellServiceImpl struct{ dao daos.SpellDAO }
 )
 
@@ -21,6 +21,6 @@ func NewSpellService(dao daos.SpellDAO) SpellService {
 }
 
 // Get for SpellService
-func (s SpellServiceImpl) Get(id int) (*models.Spell, error) {
+func (s SpellServiceImpl) Get(id int) (*models.Spells, error) {
 	return s.dao.Get(id)
 }

@@ -21,7 +21,7 @@ func main() {
 
 	router := mux.NewRouter().StrictSlash(true)
 
-	spellDao, _ := daos.NewSpellDAO(daos.MockDB)
+	spellDao, _ := daos.NewSpellDAO(daos.RealDB)
 
 	apis.ServeSpellResource(router, services.NewSpellService(spellDao))
 

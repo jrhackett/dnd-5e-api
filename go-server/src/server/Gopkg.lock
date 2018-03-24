@@ -19,9 +19,18 @@
   revision = "53c1911da2b537f792e7cafcb446b05ffe33b996"
   version = "v1.6.1"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid"
+  ]
+  revision = "b2004221932bd6b13167ef654c81cffac36f7537"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "971e76aa8500765392b9f19d40f7e2f5380533aeb570e1b94a2d805a4c10d9cf"
+  inputs-digest = "827139582bdb83d4327ca8c0fc82be0434f758008729d7b8c7e041486446ce4a"
   solver-name = "gps-cdcl"
   solver-version = 1
