@@ -1,6 +1,7 @@
 package services
 
 import (
+	"net/url"
 	"server/daos"
 	"server/models"
 )
@@ -8,7 +9,7 @@ import (
 type (
 	// SpellService specifies the interface for the spell service needed by spellResource.
 	SpellService interface {
-		Get(id int) (*models.Spells, error)
+		Get(queryString url.Values) (*models.Spells, error)
 	}
 
 	// SpellServiceImpl provides services related with spells.
@@ -21,6 +22,6 @@ func NewSpellService(dao daos.SpellDAO) SpellService {
 }
 
 // Get for SpellService
-func (s SpellServiceImpl) Get(id int) (*models.Spells, error) {
-	return s.dao.Get(id)
+func (s SpellServiceImpl) Get(queryString url.Values) (*models.Spells, error) {
+	return s.dao.Get(queryString)
 }

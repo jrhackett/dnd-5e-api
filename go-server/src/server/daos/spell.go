@@ -3,8 +3,8 @@ package daos
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 	"log"
+	"net/url"
 	"os"
 	"server/models"
 
@@ -17,7 +17,7 @@ type (
 
 	// SpellDAO describes a spell dao
 	SpellDAO interface {
-		Get(id int) (*models.Spells, error)
+		Get(queryString url.Values) (*models.Spells, error)
 	}
 
 	// DBSpellDAO persists spell data in database
@@ -46,8 +46,7 @@ func NewSpellDAO(version SpellDAOVersion) (SpellDAO, error) {
 }
 
 // Get for DBSpellDAO
-// TODO change this to real DB connection
-func (dao *DBSpellDAO) Get(id int) (*models.Spells, error) {
+func (dao *DBSpellDAO) Get(queryString url.Values) (*models.Spells, error) {
 	spells := models.Spells{}
 	db, err := sql.Open("postgres", os.Getenv("DATABASE_CONNECTION_STRING"))
 
@@ -55,7 +54,12 @@ func (dao *DBSpellDAO) Get(id int) (*models.Spells, error) {
 		log.Fatal(err)
 	}
 
+	// TODO have to deal with different types even though queryString only holds slices of strings
+	// where := queryStringToWhereClause(queryString)
+	// rows, err := db.Query("SELECT * FROM spells " + where + ";")
+
 	rows, err := db.Query("SELECT * FROM spells;")
+
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -71,12 +75,10 @@ func (dao *DBSpellDAO) Get(id int) (*models.Spells, error) {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("%+v\n", spells[0])
-
 	return &spells, nil
 }
 
 // Get for MockSpellDAO
-func (dao *MockSpellDAO) Get(id int) (*models.Spells, error) {
+func (dao *MockSpellDAO) Get(queryString url.Values) (*models.Spells, error) {
 	return &models.Spells{}, nil
 }

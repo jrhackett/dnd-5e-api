@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 	"server/services"
-	"strconv"
 
 	"github.com/gorilla/mux"
 )
@@ -26,8 +25,7 @@ func ServeSpellResource(router *mux.Router, service services.SpellService) {
 }
 
 func (s *spellResource) get(w http.ResponseWriter, r *http.Request) {
-	id, _ := strconv.ParseInt(r.URL.Query().Get("id"), 10, 0)
-	spells, _ := s.service.Get(int(id))
+	spells, _ := s.service.Get(r.URL.Query())
 	payload, _ := json.Marshal(spells)
 	sendResponse(w, "application/json", payload)
 }
