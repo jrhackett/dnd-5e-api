@@ -6,7 +6,7 @@ type (
 		Name          string `json:"name,omitempty"`
 		Level         string `json:"level,omitempty"`
 		School        string `json:"school,omitempty"`
-		Classes       string `json:"classes,omitempty"` // TODO make this an array one day
+		Classes       string `json:"classes,omitempty"` // TODO make this an array one day, have to edit SQL
 		AtHigherLevel string `json:"at_higher_level,omitempty"`
 		CastingTime   string `json:"casting_time,omitempty"`
 		Components    string `json:"components,omitempty"`

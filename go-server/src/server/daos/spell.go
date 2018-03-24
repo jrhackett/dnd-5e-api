@@ -63,7 +63,9 @@ func (dao *DBSpellDAO) Get(queryString url.Values) (*models.Spells, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	defer rows.Close()
+
 	for rows.Next() {
 		var spell models.Spell
 		if err := rows.Scan(&spell.ID, &spell.Name, &spell.School, &spell.Level, &spell.Ritual, &spell.CastingTime, &spell.Source, &spell.Range, &spell.Classes, &spell.Components, &spell.Duration, &spell.AtHigherLevel, &spell.Concentration, &spell.Slug, &spell.Page, &spell.Description); err != nil {
@@ -71,6 +73,7 @@ func (dao *DBSpellDAO) Get(queryString url.Values) (*models.Spells, error) {
 		}
 		spells = append(spells, spell)
 	}
+
 	if err := rows.Err(); err != nil {
 		log.Fatal(err)
 	}
