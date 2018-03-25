@@ -2,8 +2,6 @@
 
 This is the spells server written in Go.
 
-Disclaimer: This server is very much a work in progress right now.
-
 ## Project Structure
 
 The main entrypoint for the server is `main.go`.
@@ -16,11 +14,14 @@ The main entrypoint for the server is `main.go`.
 
 ## Hacking
 
-1. Clone the project and make sure your `$GOPATH` is set up properly. 
-2. You'll need to create a `.env` file in the `server` folder to hold some important information.
-** This only includes `PORT` right now but will be extended soon to hold information about database connections and auth.
-3. You'll also need to install Golang dep and postgres.
-4. Create a database called `spells` and run `psql -d spells -U <username> -f db/create_db.sql`
+1. Install Go, Go Dep, and Postgres
+2. Create a database and use `db/create_spells_table.sql` to initialize the spells table in that database
+** `psql -d <database name> -U <username> -f db/create_spells_table.sql`
+3. Clone the project and make sure your `$GOPATH` is to `path/to/repo/server`
+4. Create a `.env` file in this folder to hold some important information
+** `PORT` is the port you want to run the server on
+** `APP_ENV` specifies development, testing, or production environment
+** `DATABASE_CONNECTION_STRING` is the connection string to your database
 
 * To test: `go test ./...`
 * To build: `go build -o main`
