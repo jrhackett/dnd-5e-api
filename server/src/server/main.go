@@ -21,6 +21,12 @@ func main() {
 
 	router := mux.NewRouter().StrictSlash(true)
 
+	env := os.Getenv("APP_ENV")
+	if env == "production" {
+		fs := http.FileServer(http.Dir("client/build"))
+		router.Handle("/", fs)
+	}
+
 	spellDao, _ := daos.NewSpellDAO(daos.RealDB)
 
 	apis.ServeSpellResource(router, services.NewSpellService(spellDao))

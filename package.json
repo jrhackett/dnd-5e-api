@@ -10,8 +10,8 @@
     "eslint": "^4.12.0"
   },
   "scripts": {
-    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
-    "build": "cd server && npm run build && cd ../client && npm run build"
+    "start": "echo \"Not yet implemented\"",
+    "build": "echo \"Not yet implemented\""
   },
   "repository": {
     "type": "git",
