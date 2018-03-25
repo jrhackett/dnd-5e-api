@@ -18,10 +18,10 @@ type (
 // ServeSpellResource sets up routes for the spell service
 func ServeSpellResource(router *mux.Router, service services.SpellService) {
 	r := &spellResource{service}
-	router.Methods("GET").Path("/spells").Name("Get Spell").HandlerFunc(r.get)
-	router.Methods("POST").Path("/spells").Name("Post Spell").HandlerFunc(r.post)
-	router.Methods("PUT").Path("/spells").Name("Put Spell").HandlerFunc(r.put)
-	router.Methods("DELETE").Path("/spells").Name("Delete Spell").HandlerFunc(r.delete)
+	router.Methods("GET").Path("/api/v1/spells").Name("Get Spell").HandlerFunc(r.get)
+	router.Methods("POST").Path("/api/v1/spells").Name("Post Spell").HandlerFunc(r.post)
+	router.Methods("PUT").Path("/api/v1/spells").Name("Put Spell").HandlerFunc(r.put)
+	router.Methods("DELETE").Path("/api/v1/spells").Name("Delete Spell").HandlerFunc(r.delete)
 }
 
 func (s *spellResource) get(w http.ResponseWriter, r *http.Request) {

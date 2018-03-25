@@ -7,6 +7,9 @@ import (
 	"net/url"
 	"os"
 	"server/models"
+
+	// need unnamed to use the postgres driver
+	_ "github.com/lib/pq"
 )
 
 type (

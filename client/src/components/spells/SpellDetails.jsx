@@ -29,7 +29,7 @@ const Spell = ({ shouldShow, school, classes, components, duration, casting_time
     return (
       <div className={ details }>
         <p className={ extra }><span className={ detailLabel }>School:</span> { school }</p>
-        <p className={ extra }><span className={ detailLabel }>Classes:</span> { classes.join(", ") }</p>
+        <p className={ extra }><span className={ detailLabel }>Classes:</span> { classes }</p>
         <p><span className={ detailLabel }>Components:</span> { components }</p>
         <p><span className={ detailLabel }>Duration:</span> { duration }</p>
         <p><span className={ detailLabel }>Casting Time:</span> { casting_time }</p>

@@ -52,7 +52,7 @@ class Spell extends Component {
           <p>{ spell.school }</p>
         </div>
         <div className={ cx(flex.flexItem, styles.classes, styles.hideOnMobile) }>
-          <p>{ spell.classes.join(", ") }</p>
+          <p>{ spell.classes }</p>
         </div>
         <div className={ cx(flex.flexItem, styles.options, styles.hideOnMobile, { [active]: selected }) }
           onClick={(e) => {
