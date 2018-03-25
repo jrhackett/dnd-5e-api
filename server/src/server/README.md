@@ -16,12 +16,12 @@ The main entrypoint for the server is `main.go`.
 
 1. Install Go, Go Dep, and Postgres
 2. Create a database and use `db/create_spells_table.sql` to initialize the spells table in that database
-** `psql -d <database name> -U <username> -f db/create_spells_table.sql`
+    * `psql -d <database name> -U <username> -f db/create_spells_table.sql`
 3. Clone the project and make sure your `$GOPATH` is to `path/to/repo/server`
 4. Create a `.env` file in this folder to hold some important information
-** `PORT` is the port you want to run the server on
-** `APP_ENV` specifies development, testing, or production environment
-** `DATABASE_CONNECTION_STRING` is the connection string to your database
+    * `PORT` is the port you want to run the server on
+    * `APP_ENV` specifies development, testing, or production environment
+    * `DATABASE_CONNECTION_STRING` is the connection string to your database
 
 * To test: `go test ./...`
 * To build: `go build -o main`
