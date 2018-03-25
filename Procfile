@@ -1,1 +1,1 @@
-web: cd server && npm install && node build/server.js
+web: cd server/src/server && go build -o main && ./main
