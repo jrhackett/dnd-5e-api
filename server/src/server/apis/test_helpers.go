@@ -10,10 +10,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
-func executeRequest(req *http.Request) *httptest.ResponseRecorder {
+func executeRequest(req *http.Request, spellDaoVersion daos.SpellDAOVersion) *httptest.ResponseRecorder {
 	rr := httptest.NewRecorder()
 	router := mux.NewRouter().StrictSlash(true)
-	spellDao, _ := daos.NewSpellDAO(daos.MockDB)
+	spellDao, _ := daos.NewSpellDAO(spellDaoVersion)
 	ServeSpellResource(router, services.NewSpellService(spellDao))
 	router.ServeHTTP(rr, req)
 

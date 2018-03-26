@@ -2,12 +2,13 @@ package apis
 
 import (
 	"net/http"
+	"server/daos"
 	"testing"
 )
 
-func TestSimpleGetSpells(t *testing.T) {
+func TestSimpleMockGetSpells(t *testing.T) {
 	req, _ := http.NewRequest("GET", "/api/v1/spells", nil)
-	response := executeRequest(req)
+	response := executeRequest(req, daos.MockDB)
 
 	checkResponseCode(t, http.StatusOK, response.Code)
 
