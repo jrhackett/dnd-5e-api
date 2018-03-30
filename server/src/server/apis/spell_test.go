@@ -11,7 +11,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// executeRequest using the given DAO
 func executeRequest(req *http.Request, spellDaoVersion daos.SpellDAOVersion) *httptest.ResponseRecorder {
 	rr := httptest.NewRecorder()
 	router := mux.NewRouter().StrictSlash(true)
